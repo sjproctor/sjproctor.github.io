@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <!-- utf-8 works for most cases -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Forcing initial-scale shouldn't be necessary -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- Use the latest (edge) version of IE rendering engine -->
@@ -39,12 +39,45 @@
         padding: 0 !important;
         height: 100% !important;
         width: 100% !important;
+        font-family: Helvetica, Arial, sans-serif !important;
       }
 
       /* What it does: Stops email clients resizing small text. */
       * {
         -ms-text-size-adjust: 100%;
         -webkit-text-size-adjust: 100%;
+        font-family: Helvetica, Arial, sans-serif !important;
+      }
+
+      /* Mobile-specific styles */
+      @media screen and (max-width: 600px) {
+        p,
+        td,
+        span,
+        div {
+          font-size: 16px !important;
+          line-height: 24px !important;
+        }
+        h1 {
+          font-size: 24px !important;
+          line-height: 32px !important;
+        }
+        h2 {
+          font-size: 20px !important;
+          line-height: 28px !important;
+        }
+        h3 {
+          font-size: 18px !important;
+          line-height: 26px !important;
+        }
+        /* Add spacing after Google Maps links on mobile */
+        p:has(a[href*="google.com/maps"]) {
+          margin-bottom: 20px !important;
+        }
+        /* Add spacing before new sections on mobile */
+        h3 {
+          margin-top: 30px !important;
+        }
       }
 
       /* What it does: Centers email on Android 4.4 */
@@ -76,6 +109,16 @@
       /* What it does: Uses a better rendering method when resizing images in IE. */
       img {
         -ms-interpolation-mode: bicubic;
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* What it does: Ensures images are centered in email clients */
+      .image-container {
+        text-align: center;
+        width: 100%;
       }
 
       /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
@@ -168,13 +211,13 @@
   -->
   <body
     width="100%"
-    style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly;"
+    style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly"
   >
     <center
       role="article"
       aria-roledescription="email"
       lang="en"
-      style="width: 100%;"
+      style="width: 100%"
     >
       <!--[if mso | IE]>
       <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #222222;" class="email-bg">
@@ -184,14 +227,16 @@
 
       <!-- Visually Hidden Preheader Text : BEGIN -->
       <div
-        style="max-height: 0; overflow: hidden; mso-hide: all;"
+        style="max-height: 0; overflow: hidden; mso-hide: all"
         aria-hidden="true"
       >
-        The League of Women Voters of Kootenai County is delighted to invite all LWVID members to the 39th Biennial Convention in beautiful Coeur d'Alene, Idaho.
+        The League of Women Voters of Kootenai County is delighted to invite all
+        LWVID members to the 39th Biennial Convention in beautiful Coeur
+        d'Alene, Idaho.
       </div>
       <!-- Visually Hidden Preheader Text : END -->
 
-      <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+      <!-- Create white space after the desired preview text so email clients don't pull other distracting text into the inbox preview. Extend as necessary. -->
       <!-- Preview Text Spacing Hack : BEGIN -->
       <div
         style="
@@ -234,7 +279,7 @@
         >
           <!-- Email Header [LWVKC Logo] : BEGIN -->
           <tr>
-            <td style="padding: 20px 0; text-align: center;">
+            <td style="padding: 20px 0; width: 100%">
               <img
                 src="https://images.squarespace-cdn.com/content/v1/67e736ad24b6e04759bb2920/8ec277a3-b294-45aa-8f24-67e4259141c4/lwvkc-logo.png?format=1500w"
                 width="300"
@@ -245,9 +290,11 @@
                   height: auto;
                   background: #dddddd;
                   font-family: sans-serif;
-                  font-size: 18px;
+                  font-size: 20px;
                   line-height: 15px;
                   color: #555555;
+                  display: block;
+                  margin: 0 auto;
                 "
               />
             </td>
@@ -269,7 +316,7 @@
                     style="
                       padding: 20px;
                       font-family: sans-serif;
-                      font-size: 18px;
+                      font-size: 20px;
                       line-height: 20px;
                       color: #555555;
                       width: 100%;
@@ -300,28 +347,40 @@
           <!-- Hero Image [Conference Logo] : BEGIN -->
           <tr>
             <td style="background-color: #ffffff">
-              <img
-                src="https://images.squarespace-cdn.com/content/v1/67e736ad24b6e04759bb2920/e6952d4d-8960-4005-b210-6c41b11402dd/2025lwvidconvention.png?format=2500w"
-                width="350"
-                height=""
-                alt="2025 LWVID Convention infographic"
-                border="0"
-                style="
-                  width: 100%;
-                  max-width: 350px;
-                  height: auto;
-                  background: #dddddd;
-                  font-family: sans-serif;
-                  font-size: 18px;
-                  line-height: 15px;
-                  color: #555555;
-                  margin: auto;
-                  display: block;
-                "
-                class="g-img"
-              />
               <br />
-              </td>
+              <table
+                role="presentation"
+                cellspacing="0"
+                cellpadding="0"
+                border="0"
+                width="100%"
+                class="image-container"
+              >
+                <tr>
+                  <td style="text-align: center">
+                    <img
+                      src="https://images.squarespace-cdn.com/content/v1/67e736ad24b6e04759bb2920/e6952d4d-8960-4005-b210-6c41b11402dd/2025lwvidconvention.png?format=2500w"
+                      width="350"
+                      height=""
+                      alt="2025 LWVID Convention infographic"
+                      border="0"
+                      style="
+                        width: 100%;
+                        max-width: 350px;
+                        height: auto;
+                        background: #dddddd;
+                        font-family: sans-serif;
+                        font-size: 20px;
+                        line-height: 15px;
+                        color: #555555;
+                      "
+                      class="g-img"
+                    />
+                  </td>
+                </tr>
+              </table>
+              <br />
+              <br />
             </td>
           </tr>
           <!-- Hero Image : END -->
@@ -336,22 +395,25 @@
                 border="0"
                 width="100%"
               >
-              <tr>
-                <td
-                  style="
-                    padding: 20px;
-                    font-family: sans-serif;
-                    font-size: 18px;
-                    line-height: 20px;
-                    color: #555555;
-                    width: 100%;
-                  "
-                >
-                  <p style="margin: 0">
-                    Attendees will begin the Convention with an informal barbecue hosted by members of LWVKC. After adjournment on Saturday, our host League has arranged an invitation-only stage performance by the Pro Voice Project of Sandpoint.
-                  </p>
-                </td>
-              </tr>
+                <tr>
+                  <td
+                    style="
+                      padding: 20px;
+                      font-family: sans-serif;
+                      font-size: 20px;
+                      line-height: 20px;
+                      color: #555555;
+                      width: 100%;
+                    "
+                  >
+                    <p style="margin: 0">
+                      Attendees will begin the Convention with an informal
+                      barbecue hosted by members of LWVKC. After adjournment on
+                      Saturday, our host League has arranged an invitation-only
+                      stage performance by the Pro Voice Project of Sandpoint.
+                    </p>
+                  </td>
+                </tr>
               </table>
             </td>
           </tr>
@@ -359,46 +421,55 @@
 
           <!-- 1 Column Text [Location Box] : BEGIN -->
           <tr>
-            <td style="background-color: #dddddd;">
+            <td style="background-color: #ffffff; padding: 40px 0">
               <table
                 role="presentation"
                 cellspacing="0"
                 cellpadding="0"
                 border="0"
-                width="50%"
+                width="100%"
               >
                 <tr>
-                  <td
-                    style="
-                      padding: 30px;
-                      font-family: sans-serif;
-                      font-size: 18px;
-                      line-height: 20px;
-                      text-align: center;
-                      color: #555555;
-                    "
-                  >
-                    <h3 style="
-                          color: #000000;
-                          margin: 0; 
-                        "
+                  <td style="background-color: #dddddd">
+                    <table
+                      role="presentation"
+                      cellspacing="0"
+                      cellpadding="0"
+                      border="0"
                     >
-                      Conference Location
-                    </h3>
-                    <br />
-                    <p style="margin: 0; font-weight: bold;">
-                      Lutheran Church of the Master
-                    </p>
-                    <p style="margin: 0;">
-                      Schmidt Conference Room
-                    </p>
-                    <p style="margin: 0;">
-                      4800 N. Ramsey Road
-                    </p>
-                    <p style="margin: 0;">
-                      Coeur d'Alene, ID 83815
-                    </p>
-                    <p style="margin: 0;"><a href="https://www.google.com/maps/place/4800+N+Ramsey+Rd,+Coeur+d'Alene,+ID+83815/@47.7158984,-116.8101461,17z/data=!3m1!4b1!4m6!3m5!1s0x5361c13180fd388b:0xb5c693296cbdfc84!8m2!3d47.7158948!4d-116.8075658!16s%2Fg%2F11c4rv_kgn?entry=ttu&g_ep=EgoyMDI1MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">Google Map</a></p>
+                      <tr>
+                        <td
+                          style="
+                            padding: 30px;
+                            font-family: sans-serif;
+                            font-size: 20px;
+                            line-height: 20px;
+                            text-align: center;
+                            color: #555555;
+                          "
+                        >
+                          <h3 style="color: #000000; margin: 0">
+                            Conference Location
+                          </h3>
+                          <br />
+                          <p style="font-weight: bold">
+                            Lutheran Church of the Master
+                          </p>
+                          <p style="margin: 0; font-weight: bold">
+                            Schmidt Conference Room
+                          </p>
+                          <p style="margin: 0">4800 N. Ramsey Road</p>
+                          <p style="margin: 0">Coeur d'Alene, ID 83815</p>
+                          <p>
+                            <a
+                              href="https://www.google.com/maps/place/4800+N+Ramsey+Rd,+Coeur+d'Alene,+ID+83815/@47.7158984,-116.8101461,17z/data=!3m1!4b1!4m6!3m5!1s0x5361c13180fd388b:0xb5c693296cbdfc84!8m2!3d47.7158948!4d-116.8075658!16s%2Fg%2F11c4rv_kgn?entry=ttu&g_ep=EgoyMDI1MDUwNi4wIKXMDSoASAFQAw%3D%3D"
+                              target="_blank"
+                              >Google Map</a
+                            >
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
                   </td>
                 </tr>
               </table>
@@ -421,16 +492,16 @@
                     style="
                       padding: 20px;
                       font-family: sans-serif;
-                      font-size: 18px;
+                      font-size: 20px;
                       line-height: 20px;
                       color: #555555;
                       width: 100%;
                     "
                   >
-                    <h2 style="text-align: center; color: #000000;">
+                    <h2 style="text-align: center; color: #000000">
                       LWVID 39th Biennial Convention
                     </h2>
-                    <h3 style="text-align: center; color: #000000;">
+                    <h3 style="text-align: center; color: #000000">
                       Agenda-at-a-Glance
                     </h3>
                   </td>
@@ -455,28 +526,29 @@
                     style="
                       padding: 0px 20px;
                       font-family: sans-serif;
-                      font-size: 18px;
+                      font-size: 20px;
                       line-height: 20px;
                       color: #555555;
                       width: 100%;
                     "
                   >
-                    <h3>
-                      Friday, June 13, 2025 
-                    </h3>
-                    <p style="margin: 0; font-weight: bold;">
-                      5:00 - 7:00 pm
+                    <h3>Friday, June 13, 2025</h3>
+                    <p style="margin: 0; font-weight: bold">
+                      5:00 pm - 7:00 pm
                     </p>
-                    <p style="margin-top: 0;">
-                      Barbecue and welcome gathering at Mike and Betsy Bullard's home.
+                    <p style="margin-top: 0">
+                      Barbecue and welcome gathering at Mike and Betsy Bullard's
+                      home.
                     </p>
-                    <p style="margin: 0;">
-                      3412 Moccasin Road
+                    <p style="margin: 0">3412 Moccasin Road</p>
+                    <p style="margin: 0">Coeur d'Alene, ID 83815</p>
+                    <p>
+                      <a
+                        href="https://www.google.com/maps/place/3412+Moccasin+Rd,+Coeur+d'Alene,+ID+83815/@47.7092473,-116.8392679,17z/data=!3m1!4b1!4m6!3m5!1s0x5361c1516e48ac7f:0xbd7149720935decf!8m2!3d47.7092437!4d-116.8366876!16s%2Fg%2F11c19htc_l?entry=ttu&g_ep=EgoyMDI1MDUwNi4wIKXMDSoASAFQAw%3D%3D"
+                        target="_blank"
+                        >Google Map</a
+                      >
                     </p>
-                    <p style="margin: 0;">
-                      Coeur d'Alene, ID 83815
-                    </p>
-                    <p style="margin: 0;"><a href="https://www.google.com/maps/place/3412+Moccasin+Rd,+Coeur+d'Alene,+ID+83815/@47.7092473,-116.8392679,17z/data=!3m1!4b1!4m6!3m5!1s0x5361c1516e48ac7f:0xbd7149720935decf!8m2!3d47.7092437!4d-116.8366876!16s%2Fg%2F11c19htc_l?entry=ttu&g_ep=EgoyMDI1MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">Google Map</a></p>
                   </td>
                 </tr>
               </table>
@@ -499,46 +571,40 @@
                     style="
                       padding: 0px 20px;
                       font-family: sans-serif;
-                      font-size: 18px;
+                      font-size: 20px;
                       line-height: 20px;
                       color: #555555;
                       width: 100%;
                     "
                   >
-                    <h3>
-                      Saturday, June 14, 2025
-                    </h3>
-                    <p style="margin: 0; font-weight: bold;">
+                    <h3>Saturday, June 14, 2025</h3>
+                    <p style="margin: 0; font-weight: bold">
                       8:00 am - 3:50 pm
                     </p>
-                    <p style="margin: 0;">
-                      39th Biennial Convention
+                    <p style="margin: 0">39th Biennial Convention</p>
+                    <p style="margin-bottom: 0px; font-weight: bold">
+                      4:00 pm - 6:00 pm
                     </p>
-                    <p style="margin-bottom: 0px; font-weight: bold;">
-                      4:00 - 6:00 pm
+                    <p style="margin: 0">Dinner on your own</p>
+                    <p style="margin-bottom: 0px; font-weight: bold">
+                      6:00 pm - 8:00 pm
                     </p>
-                    <p style="margin: 0;">
-                      Dinner on your own
-                    </p>
-                    <p style="margin-bottom: 0px; font-weight: bold;">
-                      6:00 - 8:00 pm
-                    </p>
-                    <p style="margin-top: 0;">
+                    <p style="margin-top: 0">
                       Invitation-only In Defiance of Silence Stage Production
                     </p>
-                    <p style="margin: 0; font-weight: bold;">
+                    <p style="margin: 0; font-weight: bold">
                       The Art Spirit Gallery
                     </p>
-                    <p style="margin: 0;">
-                      415 Sherman Avenue
-                    </p>
-                    <p style="margin: 0;">
-                      Coeur d'Alene, ID 83814
-                    </p>
-                    <p style="margin: 0;"><a href="https://www.google.com/maps/place/415+Sherman+Ave,+Coeur+d'Alene,+ID+83814/@47.6735681,-116.7828619,17z/data=!3m1!4b1!4m6!3m5!1s0x5361c6603faaa153:0x697925f47a161ded!8m2!3d47.6735645!4d-116.7802816!16s%2Fg%2F11b8z83w14?entry=ttu&g_ep=EgoyMDI1MDUwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">Google Map</a></p>
+                    <p style="margin: 0">415 Sherman Avenue</p>
+                    <p style="margin: 0">Coeur d'Alene, ID 83814</p>
                     <p>
-                      Light refreshments for free and wine for sale.
+                      <a
+                        href="https://www.google.com/maps/place/415+Sherman+Ave,+Coeur+d'Alene,+ID+83814/@47.6735681,-116.7828619,17z/data=!3m1!4b1!4m6!3m5!1s0x5361c6603faaa153:0x697925f47a161ded!8m2!3d47.6735645!4d-116.7802816!16s%2Fg%2F11b8z83w14?entry=ttu&g_ep=EgoyMDI1MDUwNi4wIKXMDSoASAFQAw%3D%3D"
+                        target="_blank"
+                        >Google Map</a
+                      >
                     </p>
+                    <p>Light refreshments are available for free as well as wine for sale.</p>
                     <br />
                   </td>
                 </tr>
@@ -550,28 +616,40 @@
           <!-- Image [Coeur d'Alene] : BEGIN -->
           <tr>
             <td style="background-color: #ffffff">
-              <img
-                src="https://images.squarespace-cdn.com/content/v1/67e736ad24b6e04759bb2920/88c6ebe0-74f2-4f32-8bad-0c2887b7620f/lwv-lake-coeur-dalene.jpg?format=2500w"
-                width="500"
-                height=""
-                alt="Lake Coeur d'Alene"
-                border="0"
-                style="
-                  width: 100%;
-                  max-width: 500;
-                  height: auto;
-                  background: #dddddd;
-                  font-family: sans-serif;
-                  font-size: 18px;
-                  line-height: 15px;
-                  color: #555555;
-                  margin: auto;
-                  display: block;
-                "
-                class="g-img"
-              />
               <br />
-              </td>
+              <table
+                role="presentation"
+                cellspacing="0"
+                cellpadding="0"
+                border="0"
+                width="100%"
+                class="image-container"
+              >
+                <tr>
+                  <td style="text-align: center">
+                    <img
+                      src="https://images.squarespace-cdn.com/content/v1/67e736ad24b6e04759bb2920/88c6ebe0-74f2-4f32-8bad-0c2887b7620f/lwv-lake-coeur-dalene.jpg?format=2500w"
+                      width="500"
+                      height=""
+                      alt="Lake Coeur d'Alene"
+                      border="0"
+                      style="
+                        width: 100%;
+                        max-width: 500px;
+                        height: auto;
+                        background: #dddddd;
+                        font-family: sans-serif;
+                        font-size: 20px;
+                        line-height: 15px;
+                        color: #555555;
+                      "
+                      class="g-img"
+                    />
+                  </td>
+                </tr>
+              </table>
+              <br />
+              <br />
             </td>
           </tr>
           <!-- Image : END -->
@@ -590,19 +668,13 @@
                   <td
                     style="
                       font-family: sans-serif;
-                      font-size: 18px;
+                      font-size: 20px;
                       line-height: 20px;
                       color: #555555;
                       width: 100%;
                     "
                   >
-                    <h2
-                      style="
-                        text-align: center;
-                        color: #000000;
-                        margin: 0;
-                      "
-                    >
+                    <h2 style="text-align: center; color: #000000; margin: 0">
                       Explore Beautiful Coeur d'Alene
                     </h2>
                   </td>
@@ -627,17 +699,43 @@
                     style="
                       padding: 20px;
                       font-family: sans-serif;
-                      font-size: 18px;
+                      font-size: 20px;
                       line-height: 20px;
                       color: #555555;
                       width: 100%;
                     "
                   >
                     <p>
-                      Those arriving early might enjoy a <a href="www.cdacruises.com" target="_blank">lake cruise</a> or a visit to the brand-new <a href="https://museumni.org/" target="_blank">Museum of North Idaho</a> at the foot of <a href="https://www.cdaid.org/tubbs-hill" target="_blank">Tubbs Hill</a>, where you can also enjoy a great two-mile walk along the lake. Stop by Art Spirit Gallery on Sherman and go upstairs for the <a href="https://www.theprovoiceproject.com/schedule" target="_blank">Worth of a Woman</a> art display, part of the ProVoice Project. 
+                      Those arriving early might enjoy a
+                      <a href="www.cdacruises.com" target="_blank"
+                        >lake cruise</a
+                      >
+                      or a visit to the brand-new
+                      <a href="https://museumni.org/" target="_blank"
+                        >Museum of North Idaho</a
+                      >
+                      at the foot of
+                      <a href="https://www.cdaid.org/tubbs-hill" target="_blank"
+                        >Tubbs Hill</a
+                      >, where you can also enjoy a great two-mile walk along
+                      the lake. Stop by Art Spirit Gallery on Sherman and go
+                      upstairs for the
+                      <a
+                        href="https://www.theprovoiceproject.com/schedule"
+                        target="_blank"
+                        >Worth of a Woman</a
+                      >
+                      art display, part of the ProVoice Project.
                     </p>
                     <p>
-                      Family or friends accompanying you on the trip may wish to take advantage of <a href="https://cdadowntown.com/cda-events/car-dlane-classic-car-weekend/" target="_blank">Car d'Lane</a>. Classic cars will fill the downtown, where you will also find shopping and eclectic dining options.
+                      Family or friends accompanying you on the trip may wish to
+                      take advantage of
+                      <a
+                        href="https://cdadowntown.com/cda-events/car-dlane-classic-car-weekend/"
+                        target="_blank"
+                        >Car d'Lane</a
+                      >. Classic cars will fill the downtown, where you will
+                      also find shopping and eclectic dining options.
                     </p>
                   </td>
                 </tr>
@@ -649,27 +747,39 @@
           <!-- Image [Car d'lane] : BEGIN -->
           <tr>
             <td style="background-color: #ffffff">
-              <img
-                src="https://images.squarespace-cdn.com/content/v1/67e736ad24b6e04759bb2920/24b72dc1-f7e6-47b3-97d5-e3224b21aebd/lwv-car-dlane.png?format=1500w"
-                width="350"
-                height=""
-                alt="Promo for Car d'lane"
+              <br />
+              <table
+                role="presentation"
+                cellspacing="0"
+                cellpadding="0"
                 border="0"
-                style="
-                  width: 70%;
-                  max-width: 350;
-                  height: auto;
-                  background: #dddddd;
-                  font-family: sans-serif;
-                  font-size: 18px;
-                  line-height: 15px;
-                  color: #555555;
-                  margin: auto;
-                  display: block;
-                "
-                class="g-img"
-              />
-              </td>
+                width="100%"
+                class="image-container"
+              >
+                <tr>
+                  <td style="text-align: center">
+                    <img
+                      src="https://images.squarespace-cdn.com/content/v1/67e736ad24b6e04759bb2920/24b72dc1-f7e6-47b3-97d5-e3224b21aebd/lwv-car-dlane.png?format=1500w"
+                      width="350"
+                      height=""
+                      alt="Promo for Car d'lane"
+                      border="0"
+                      style="
+                        width: 70%;
+                        max-width: 350px;
+                        height: auto;
+                        background: #dddddd;
+                        font-family: sans-serif;
+                        font-size: 20px;
+                        line-height: 15px;
+                        color: #555555;
+                      "
+                      class="g-img"
+                    />
+                  </td>
+                </tr>
+              </table>
+              <br />
             </td>
           </tr>
           <!-- Image : END -->
@@ -689,20 +799,43 @@
                     style="
                       padding: 20px;
                       font-family: sans-serif;
-                      font-size: 18px;
+                      font-size: 20px;
                       line-height: 20px;
                       color: #555555;
                       width: 100%;
                     "
                   >
                     <p>
-                      Is your family member (or friend) passionate about or just interested in fly fishing? Contact Mike Bullard to arrange a private fishing adventure with a League spouse.
+                      Is your family member (or friend) passionate about or just
+                      interested in fly fishing? Contact Mike Bullard to arrange
+                      a private fishing adventure with a League spouse.
                     </p>
                     <p>
-                      On Sunday, June 15, consider hanging around just a little longer to walk on the beach or in the park or enjoy one of Coeur d'Alene's famous Sunday brunches before heading home.
+                      On Sunday, June 15, consider hanging around just a little
+                      longer to walk on the beach or in the park or enjoy one of
+                      Coeur d'Alene's famous Sunday brunches before heading
+                      home.
                     </p>
-                    <p>For more ideas for adventures in and around Coeur d'Alene, download the <a href="https://coeurdalene.org/discover/area-information/visitor-center/" target="_blank">visitor's guide</a>.</p>
-                    <p>A one-night stay at one of Coeur d'Alene's downtown hotels will cost between $150 and $300. Local Leaguers are also offering guest rooms. This is a great way to meet new people, reconnect with old friends, and save money. A $10 freewill donation is suggested. Please contact League member Sally Machlis, <a href="mailto:sallymac@uidaho.edu">sallymac@uidaho.edu</a>, if you wish to be a home stay participant. </p>
+                    <p style="margin-bottom: 0px">
+                      For more ideas for adventures in and around Coeur d'Alene,
+                      download the
+                      <a
+                        href="https://coeurdalene.org/discover/area-information/visitor-center/"
+                        target="_blank"
+                        >visitor's guide</a
+                      >.
+                    </p>
+                    <p>
+                      A one-night stay at one of Coeur d'Alene's downtown hotels
+                      will cost between $150 and $300. Local Leaguers are also
+                      offering guest rooms. This is a great way to meet new
+                      people, reconnect with old friends, and save money. A $10
+                      freewill donation is suggested. Please contact League
+                      member Sally Machlis,
+                      <a href="mailto:sallymac@uidaho.edu"
+                        >sallymac@uidaho.edu</a
+                      >, if you wish to be a home stay participant.
+                    </p>
                   </td>
                 </tr>
               </table>
@@ -725,23 +858,22 @@
                     style="
                       padding: 0px 20px;
                       font-family: sans-serif;
-                      font-size: 18px;
+                      font-size: 20px;
                       line-height: 20px;
                       color: #555555;
                       width: 100%;
                     "
                   >
-                    <p>
-                      We can't wait to see you all in June. Please contact me if you have any questions.
+                    <p style="margin-top: 0px">
+                      We can't wait to see you all in June. Please contact me if
+                      you have any questions.
                     </p>
-                    <p style="margin: 0;">
-                      Mike Bullard, President, LWVKC
-                    </p>
-                    <p style="margin: 0;">
-                      (208) 659-2491 
-                    </p>
-                    <p style="margin: 0;">
-                      <a href="mailto:mabullard@gmail.com">mabullard@gmail.com</a>
+                    <p style="margin: 0px">Mike Bullard, President, LWVKC</p>
+                    <p style="margin: 0px">(208) 659-2491</p>
+                    <p style="margin: 0px">
+                      <a href="mailto:mabullard@gmail.com"
+                        >mabullard@gmail.com</a
+                      >
                     </p>
                   </td>
                 </tr>
@@ -754,14 +886,13 @@
           <tr>
             <td
               aria-hidden="true"
-              height="40"
+              height="100"
               style="font-size: 0px; line-height: 0px"
             >
               &nbsp;
             </td>
           </tr>
           <!-- Clear Spacer : END -->
-
         </table>
         <!-- Email Body : END -->
 
@@ -784,11 +915,7 @@
       >
         <tr>
           <td>
-            <div
-              align="center"
-              style="margin: auto"
-              class="email-container"
-            >
+            <div align="center" style="margin: auto" class="email-container">
               <!--[if mso]>
                           <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
                           <tr>
@@ -804,7 +931,7 @@
                   <td
                     style="
                       font-family: sans-serif;
-                      font-size: 18px;
+                      font-size: 20px;
                       line-height: 20px;
                       color: #ffffff;
                       text-align: center;
@@ -816,12 +943,8 @@
                     <p style="margin: 0">
                       The League of Women Voters of Kootenai County
                     </p>
-                    <p style="margin: 0">
-                      Coeur d'Alene, Idaho
-                    </p>
-                    <p style="margin: 0">
-                      LWVID 39th Biennial Convention
-                    </p>
+                    <p style="margin: 0">Coeur d'Alene, Idaho</p>
+                    <p style="margin: 0">LWVID 39th Biennial Convention</p>
                   </td>
                 </tr>
               </table>
