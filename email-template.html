@@ -22,7 +22,80 @@
     <meta name="color-scheme" content="light dark" />
     <meta name="supported-color-schemes" content="light dark" />
     <title>LWVID 39th Biennial Convention Welcome Letter</title>
-    <!-- The title tag shows in email notifications, like Android 4.4. -->
+    <style type="text/css">
+      /* Base styles */
+      body,
+      p,
+      td {
+        font-size: 16px;
+        line-height: 24px;
+      }
+      h1 {
+        font-size: 24px;
+        line-height: 32px;
+      }
+      h2 {
+        font-size: 20px;
+        line-height: 28px;
+      }
+      h3 {
+        font-size: 18px;
+        line-height: 26px;
+      }
+
+      /* Mobile styles */
+      @media screen and (max-width: 600px) {
+        body,
+        p,
+        td {
+          font-size: 18px !important;
+          line-height: 28px !important;
+        }
+        h1 {
+          font-size: 28px !important;
+          line-height: 36px !important;
+        }
+        h2 {
+          font-size: 24px !important;
+          line-height: 32px !important;
+        }
+        h3 {
+          font-size: 22px !important;
+          line-height: 30px !important;
+        }
+      }
+    </style>
+    <!--[if mso]>
+      <style type="text/css">
+        body,
+        table,
+        td {
+          font-family: Helvetica, Arial, sans-serif !important;
+        }
+      </style>
+    <![endif]-->
+    <!--[if !mso]><!-->
+    <style type="text/css">
+      @media screen and (max-width: 600px) {
+        .mobile-text {
+          font-size: 18px !important;
+          line-height: 28px !important;
+        }
+        .mobile-heading-1 {
+          font-size: 28px !important;
+          line-height: 36px !important;
+        }
+        .mobile-heading-2 {
+          font-size: 24px !important;
+          line-height: 32px !important;
+        }
+        .mobile-heading-3 {
+          font-size: 22px !important;
+          line-height: 30px !important;
+        }
+      }
+    </style>
+    <!--<![endif]-->
     <!-- CSS Reset : BEGIN -->
     <style>
       /* What it does: Tells the email client that both light and dark styles are provided. A duplicate of meta color-scheme meta tag above. */
@@ -51,24 +124,21 @@
 
       /* Mobile-specific styles */
       @media screen and (max-width: 600px) {
-        p,
-        td,
-        span,
-        div {
-          font-size: 16px !important;
-          line-height: 24px !important;
+        .mobile-text {
+          font-size: 18px !important;
+          line-height: 28px !important;
         }
-        h1 {
+        .mobile-heading-1 {
+          font-size: 28px !important;
+          line-height: 36px !important;
+        }
+        .mobile-heading-2 {
           font-size: 24px !important;
           line-height: 32px !important;
         }
-        h2 {
-          font-size: 20px !important;
-          line-height: 28px !important;
-        }
-        h3 {
-          font-size: 18px !important;
-          line-height: 26px !important;
+        .mobile-heading-3 {
+          font-size: 22px !important;
+          line-height: 30px !important;
         }
         /* Add spacing after Google Maps links on mobile */
         p:has(a[href*="google.com/maps"]) {
@@ -481,10 +551,16 @@
               >
                 <tr>
                   <td style="padding: 0 20px">
-                    <h2 style="text-align: center; color: #000000; margin: 0">
+                    <h2
+                      style="text-align: center; color: #000000; margin: 0"
+                      class="mobile-heading-2"
+                    >
                       LWVID 39th Biennial Convention
                     </h2>
-                    <h3 style="text-align: center; color: #000000; margin: 0">
+                    <h3
+                      style="text-align: center; color: #000000; margin: 0"
+                      class="mobile-heading-3"
+                    >
                       Agenda-at-a-Glance
                     </h3>
                   </td>
@@ -505,8 +581,10 @@
                 width="100%"
               >
                 <tr>
-                  <td style="padding: 0 20px">
-                    <h3 style="margin: 0">Friday, June 13, 2025</h3>
+                  <td style="padding: 0 20px" class="mobile-text">
+                    <h3 style="margin: 0" class="mobile-heading-3">
+                      Friday, June 13, 2025
+                    </h3>
                     <p style="margin: 0; font-weight: bold">
                       5:00 pm - 7:00 pm
                     </p>
@@ -801,7 +879,7 @@
                       member Sally Machlis,
                       <a href="mailto:sallymac@uidaho.edu"
                         >sallymac@uidaho.edu</a
-                      >, if you wish to be a home stay participant.
+                      >, if you wish to be a homestay participant.
                     </p>
                   </td>
                 </tr>
