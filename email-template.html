@@ -22,44 +22,47 @@
     <meta name="color-scheme" content="light dark" />
     <meta name="supported-color-schemes" content="light dark" />
     <title>LWVID 39th Biennial Convention Welcome Letter</title>
+    <!-- Base styles -->
     <style type="text/css">
-      /* Base styles */
-      body,
-      p,
-      td {
-        font-size: 16px;
-        line-height: 24px;
-      }
-      h1 {
-        font-size: 24px;
-        line-height: 32px;
-      }
-      h2 {
-        font-size: 20px;
-        line-height: 28px;
-      }
-      h3 {
-        font-size: 18px;
-        line-height: 26px;
-      }
-
-      /* Mobile styles */
       @media screen and (max-width: 600px) {
-        body,
-        p,
-        td {
+        td[style*="font-size: 16px"] {
           font-size: 18px !important;
           line-height: 28px !important;
         }
-        h1 {
+        td[style*="font-size: 20px"] {
+          font-size: 22px !important;
+          line-height: 30px !important;
+        }
+        td[style*="font-size: 24px"] {
           font-size: 28px !important;
           line-height: 36px !important;
         }
-        h2 {
+      }
+    </style>
+    <!-- Mobile styles -->
+    <style type="text/css">
+      @media screen and (max-width: 600px) {
+        table[class="body"] {
+          width: 100% !important;
+        }
+        td[class="body"] {
+          width: 100% !important;
+        }
+        td[class="body"] p,
+        td[class="body"] span,
+        td[class="body"] div {
+          font-size: 18px !important;
+          line-height: 28px !important;
+        }
+        td[class="body"] h1 {
+          font-size: 28px !important;
+          line-height: 36px !important;
+        }
+        td[class="body"] h2 {
           font-size: 24px !important;
           line-height: 32px !important;
         }
-        h3 {
+        td[class="body"] h3 {
           font-size: 22px !important;
           line-height: 30px !important;
         }
@@ -386,13 +389,12 @@
                     style="
                       padding: 20px;
                       font-family: sans-serif;
-                      font-size: 20px;
-                      line-height: 20px;
+                      font-size: 18px;
+                      line-height: 24px;
                       color: #555555;
-                      width: 100%;
                     "
                   >
-                    <p style="margin: 0">
+                    <p>
                       The League of Women Voters of Kootenai County is delighted
                       to invite all LWVID members to the 39th Biennial
                       Convention in beautiful Coeur d'Alene, Idaho. Whether you
@@ -400,8 +402,7 @@
                       opportunity to connect with like-minded individuals and
                       contribute to the ongoing work of the League.
                     </p>
-                    <br />
-                    <p style="margin: 0">
+                    <p>
                       The Convention's theme, "Idaho's Healthcare Desert for
                       Women," will allow delegates, observers, and expert
                       panelists to explore the domino effect of Idaho's legal
@@ -438,18 +439,14 @@
                         width: 100%;
                         max-width: 350px;
                         height: auto;
-                        background: #dddddd;
                         font-family: sans-serif;
-                        font-size: 20px;
-                        line-height: 15px;
-                        color: #555555;
+                        font-size: 18px;
                       "
                       class="g-img"
                     />
                   </td>
                 </tr>
               </table>
-              <br />
               <br />
             </td>
           </tr>
@@ -470,13 +467,12 @@
                     style="
                       padding: 20px;
                       font-family: sans-serif;
-                      font-size: 20px;
-                      line-height: 20px;
+                      font-size: 18px;
+                      line-height: 24px;
                       color: #555555;
-                      width: 100%;
                     "
                   >
-                    <p style="margin: 0">
+                    <p>
                       Attendees will begin the Convention with an informal
                       barbecue hosted by members of LWVKC. After adjournment on
                       Saturday, our host League has arranged an invitation-only
@@ -550,16 +546,24 @@
                 width="100%"
               >
                 <tr>
-                  <td style="padding: 0 20px">
+                  <td
+                    style="
+                      font-family: sans-serif;
+                      font-size: 18px;
+                      line-height: 24px;
+                      color: #000000;
+                    "
+                  >
                     <h2
-                      style="text-align: center; color: #000000; margin: 0"
-                      class="mobile-heading-2"
+                      style="
+                        text-align: center;
+                        margin: 0;
+                      "
                     >
                       LWVID 39th Biennial Convention
                     </h2>
                     <h3
-                      style="text-align: center; color: #000000; margin: 0"
-                      class="mobile-heading-3"
+                      style="text-align: center"
                     >
                       Agenda-at-a-Glance
                     </h3>
@@ -581,7 +585,15 @@
                 width="100%"
               >
                 <tr>
-                  <td style="padding: 0 20px" class="mobile-text">
+                  <td
+                    style="
+                      padding: 20px;
+                      font-family: sans-serif;
+                      font-size: 18px;
+                      line-height: 24px;
+                      color: #555555;
+                    "
+                  >
                     <h3 style="margin: 0" class="mobile-heading-3">
                       Friday, June 13, 2025
                     </h3>
@@ -619,7 +631,15 @@
                 width="100%"
               >
                 <tr>
-                  <td style="padding: 0 20px">
+                  <td
+                    style="
+                      padding: 20px;
+                      font-family: sans-serif;
+                      font-size: 18px;
+                      line-height: 24px;
+                      color: #555555;
+                    "
+                  >
                     <h3 style="margin: 0">Saturday, June 14, 2025</h3>
                     <p style="margin: 0; font-weight: bold">
                       8:00 am - 3:50 pm
@@ -713,13 +733,12 @@
                   <td
                     style="
                       font-family: sans-serif;
-                      font-size: 20px;
-                      line-height: 20px;
-                      color: #555555;
-                      width: 100%;
+                      font-size: 18px;
+                      line-height: 24px;
+                      color: #000000;
                     "
                   >
-                    <h2 style="text-align: center; color: #000000; margin: 0">
+                    <h2 style="text-align: center; margin: 0">
                       Explore Beautiful Coeur d'Alene
                     </h2>
                   </td>
@@ -744,10 +763,9 @@
                     style="
                       padding: 20px;
                       font-family: sans-serif;
-                      font-size: 20px;
-                      line-height: 20px;
+                      font-size: 18px;
+                      line-height: 24px;
                       color: #555555;
-                      width: 100%;
                     "
                   >
                     <p>
@@ -844,10 +862,9 @@
                     style="
                       padding: 20px;
                       font-family: sans-serif;
-                      font-size: 20px;
-                      line-height: 20px;
+                      font-size: 18px;
+                      line-height: 24px;
                       color: #555555;
-                      width: 100%;
                     "
                   >
                     <p>
@@ -901,12 +918,11 @@
                 <tr>
                   <td
                     style="
-                      padding: 0px 20px;
+                      padding: 20px;
                       font-family: sans-serif;
-                      font-size: 20px;
-                      line-height: 20px;
+                      font-size: 18px;
+                      line-height: 24px;
                       color: #555555;
-                      width: 100%;
                     "
                   >
                     <p style="margin-top: 0px">
@@ -975,21 +991,18 @@
                 <tr>
                   <td
                     style="
-                      font-family: sans-serif;
-                      font-size: 20px;
-                      line-height: 20px;
                       color: #ffffff;
                       text-align: center;
                       width: 100%;
                       padding: 20px;
-                      width: 100%;
                     "
+                    class="body"
                   >
                     <p style="margin: 0">
                       The League of Women Voters of Kootenai County
                     </p>
                     <p style="margin: 0">Coeur d'Alene, Idaho</p>
-                    <p style="margin: 0">LWVID 39th Biennial Convention</p>
+                    <p>LWVID 39th Biennial Convention</p>
                   </td>
                 </tr>
               </table>
