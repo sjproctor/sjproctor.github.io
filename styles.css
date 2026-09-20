@@ -1,0 +1,234 @@
+/* Bernillo's Pizza — plain CSS, mobile-first, no build tools or external assets. */
+
+:root {
+  --red: #8c1c1c;
+  --red-dark: #641313;
+  --cream: #fbf6ee;
+  --white: #ffffff;
+  --ink: #2b2320;
+  --check-size: 2rem;
+
+  --font-heading: Georgia, "Times New Roman", Times, serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --wrap-max: 60rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.6;
+}
+
+h1,
+h2 {
+  font-family: var(--font-heading);
+  margin: 0 0 0.5rem;
+}
+
+a {
+  color: var(--red);
+}
+
+.wrap {
+  max-width: var(--wrap-max);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Red-and-white checkered curtain accent, no images required */
+.checkered-band {
+  height: 0.75rem;
+  background-image:
+    repeating-linear-gradient(45deg,
+      var(--red) 0,
+      var(--red) var(--check-size),
+      var(--white) var(--check-size),
+      var(--white) calc(var(--check-size) * 2));
+  background-size: calc(var(--check-size) * 2) calc(var(--check-size) * 2);
+}
+
+.site-header {
+  background: var(--red);
+  color: var(--white);
+}
+
+.site-header .wrap {
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+.site-header h1 {
+  color: var(--white);
+  font-size: 2rem;
+  margin-top: 0.25rem;
+}
+
+.tagline {
+  margin: 0 0 1rem;
+  font-style: italic;
+}
+
+.site-nav {
+  background: var(--red-dark);
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 1rem;
+}
+
+.site-nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  text-decoration: underline;
+}
+
+.hero {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.hero p {
+  max-width: 34rem;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+.section {
+  padding: 2rem 0;
+}
+
+.section.alt {
+  background: var(--white);
+  border-top: 1px solid rgba(140, 28, 28, 0.15);
+  border-bottom: 1px solid rgba(140, 28, 28, 0.15);
+}
+
+.section h2 {
+  color: var(--red);
+  font-size: 1.5rem;
+}
+
+.section-lede {
+  font-style: italic;
+  margin-top: 0;
+}
+
+.placeholder {
+  color: #6b6058;
+}
+
+.hours-table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 22rem;
+}
+
+.hours-table th,
+.hours-table td {
+  text-align: left;
+  padding: 0.35rem 0.5rem;
+  border-bottom: 1px solid rgba(140, 28, 28, 0.15);
+  font-weight: normal;
+}
+
+.hours-table th {
+  font-weight: 600;
+}
+
+address {
+  font-style: normal;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.photo-placeholder {
+  aspect-ratio: 1 / 1;
+  background-image:
+    repeating-linear-gradient(45deg,
+      rgba(140, 28, 28, 0.15) 0,
+      rgba(140, 28, 28, 0.15) 1rem,
+      transparent 1rem,
+      transparent 2rem);
+  background-color: var(--white);
+  border: 1px solid rgba(140, 28, 28, 0.2);
+  border-radius: 0.25rem;
+}
+
+.site-footer {
+  background: var(--red);
+  color: var(--white);
+}
+
+.site-footer .wrap {
+  padding: 1rem 1.25rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.site-footer a {
+  color: var(--white);
+}
+
+/* Two-column layout once there's enough room */
+@media (min-width: 40rem) {
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .site-header .wrap {
+    padding-top: 2.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .site-header h1 {
+    font-size: 2.75rem;
+  }
+
+  .hero {
+    padding: 3rem 0;
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+}
