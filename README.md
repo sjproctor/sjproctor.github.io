@@ -1,23 +1,52 @@
 # Bernillos
 
-- Single page
-- Mobile first
-- Info:
-  - location: 220 E Redwood, Fort Bragg, CA 95437
-  - hours: Closed M, T, W, Th 6-8pm, F 3:30-8pm, Sat 3:30-8pm, Sun 3:30-8pm
-  - contact: (707) 964-9314
-  - menu: “Just the Classics”
-  - history: placeholder
-  - bio of current owner: placeholder
-  - photos of pizzas: placeholder
-- Vibe: old school “hole in the wall” pizza parlor with red and white checked curtains
-- Technical
-  - Super simple tech stack: HTML + CSS, very limited dependencies
-  - SEO for Fort Bragg, pizza
+## Content
+
+Old school “hole in the wall” pizza parlor with red and white checked curtains.
+
+### Hours
+
+- Monday: closed
+- Tuesday: closed
+- Wednesday: closed
+- Thursday: 6-8pm
+- Friday: 3:30-8pm
+- Saturday: 3:30-8pm
+- Sunday: 3:30-8pm
+
+### Location & Contact
+
+- 220 E Redwood, Fort Bragg, CA 95437
+- (707) 964-9314
+
+### Menu
+
+“Just the Classics”
+
+Sizes: 12", 14", 16"
+Crust: thin, regular
+Sauce: red, pesto
+- Cheese: $25, $31, $36
+- Classic combo: $32, $39, $43
+- Hawaiian: $27, $33, $38
+- Meatzilla: $32, $39, $45
+- Pepperoni: $27, $35, $38
+- Veggie delight: $32, $38, $45
+
+Extra toppings: $2 for 12", $3 for 14", $4 for 16"
+Extra toppings: anchovies, extra cheese, ham, linguica, pepperoni, salami, sausage, bell pepper, garlic, onion, jalapenos, mushrooms, olives, pepperoncini, pineapple, spinach, sundried tomato
+Ranch dressings: $1.25 for 2oz, $4 for 8oz
+Beers: 6 rotating drafts
+
+### Additional Content
+
+- History of the restaurant
+- Bio of current owner
+- Photos of pizzas
 
 ## Site
 
-Static single-page site, no build step, no JS, no external fonts/CDNs — just open `index.html`.
+Static single-page site, HTML + CSS, no dependencies, no build step, no JS, no external fonts/CDNs — just open `index.html`.
 
 - `index.html` — page content, meta tags, and JSON-LD `Restaurant` schema for SEO
 - `styles.css` — mobile-first styles; red/white checkered look is done with CSS gradients (no images)

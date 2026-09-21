@@ -34,8 +34,6 @@
     },
     "telephone": "+1-707-964-9314",
     "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "18:00", "closes": "20:00" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "18:00", "closes": "20:00" },
       { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "18:00", "closes": "20:00" },
       { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "15:30", "closes": "20:00" },
       { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "15:30", "closes": "20:00" },
@@ -45,23 +43,21 @@
   </script>
 </head>
 
-<body>
+<body id="top">
 
   <header class="site-header">
     <div class="checkered-band" aria-hidden="true"></div>
     <div class="wrap">
       <p class="eyebrow">Fort Bragg, California</p>
       <h1>Bernillo's Pizza</h1>
-      <p class="tagline">Just the Classics</p>
+      <p class="tagline">Since 1980</p>
     </div>
     <nav class="site-nav" aria-label="Primary">
       <ul>
         <li><a href="#menu">Menu</a></li>
         <li><a href="#hours-location">Hours &amp; Location</a></li>
-        <li><a href="#history">History</a></li>
-        <li><a href="#owner">Owner</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#photos">Photos</a></li>
-        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -80,8 +76,89 @@
     <section id="menu" class="section">
       <div class="wrap">
         <h2>Menu</h2>
-        <p class="section-lede">Just the Classics.</p>
-        <p class="placeholder">Full menu coming soon &mdash; give us a call for today's offerings.</p>
+        <p class="section-lede">&ldquo;Just the Classics&rdquo;</p>
+
+        <dl class="menu-options">
+          <div>
+            <dt>Crust</dt>
+            <dd><span class="chip">Thin</span><span class="chip">Regular</span></dd>
+          </div>
+          <div>
+            <dt>Sauce</dt>
+            <dd><span class="chip">Red</span><span class="chip">Pesto</span></dd>
+          </div>
+        </dl>
+
+        <table class="menu-table">
+          <thead>
+            <tr>
+              <th scope="col">Pizza</th>
+              <th scope="col">12&Prime;</th>
+              <th scope="col">14&Prime;</th>
+              <th scope="col">16&Prime;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Cheese</th>
+              <td>$25</td>
+              <td>$31</td>
+              <td>$36</td>
+            </tr>
+            <tr>
+              <th scope="row">Classic Combo</th>
+              <td>$32</td>
+              <td>$39</td>
+              <td>$43</td>
+            </tr>
+            <tr>
+              <th scope="row">Hawaiian</th>
+              <td>$27</td>
+              <td>$33</td>
+              <td>$38</td>
+            </tr>
+            <tr>
+              <th scope="row">Meatzilla</th>
+              <td>$32</td>
+              <td>$39</td>
+              <td>$45</td>
+            </tr>
+            <tr>
+              <th scope="row">Pepperoni</th>
+              <td>$27</td>
+              <td>$35</td>
+              <td>$38</td>
+            </tr>
+            <tr>
+              <th scope="row">Veggie Delight</th>
+              <td>$32</td>
+              <td>$38</td>
+              <td>$45</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="menu-extras">
+          <div class="menu-extra">
+            <h3>Extra Toppings</h3>
+            <p class="menu-extra-price">$2 / $3 / $4 <span class="menu-extra-note">(12&Prime; / 14&Prime; /
+                16&Prime;)</span></p>
+            <p class="menu-extra-detail">
+              Anchovies, extra cheese, ham, linguica, pepperoni, salami, sausage, bell pepper, garlic, onion,
+              jalape&ntilde;os, mushrooms, olives, pepperoncini, pineapple, spinach, sundried tomato
+            </p>
+          </div>
+          <div class="menu-extra">
+            <h3>Ranch Dressing</h3>
+            <p class="menu-extra-price">2oz <span class="menu-extra-note">$1.25</span></p>
+            <p class="menu-extra-price">8oz <span class="menu-extra-note">$4</span></p>
+          </div>
+          <div class="menu-extra">
+            <h3>Beer</h3>
+            <p class="menu-extra-detail">6 rotating drafts</p>
+            <p class="menu-extra-detail">See draft menu for current selections</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -97,11 +174,11 @@
               </tr>
               <tr>
                 <th scope="row">Tuesday</th>
-                <td>6:00 &ndash; 8:00 PM</td>
+                <td>Closed</td>
               </tr>
               <tr>
                 <th scope="row">Wednesday</th>
-                <td>6:00 &ndash; 8:00 PM</td>
+                <td>Closed</td>
               </tr>
               <tr>
                 <th scope="row">Thursday</th>
@@ -128,25 +205,24 @@
             220 E Redwood<br>
             Fort Bragg, CA 95437
           </address>
+          <p>Call <a href="tel:+17079649314">(707) 964-9314</a> to place a takeout order.</p>
         </div>
       </div>
     </section>
 
-    <section id="history" class="section">
+    <section id="about" class="section">
       <div class="wrap">
-        <h2>Our History</h2>
+        <h2>About Bernillo's Pizza</h2>
+        <h3>History</h3>
         <p class="placeholder">History coming soon.</p>
       </div>
-    </section>
-
-    <section id="owner" class="section alt">
       <div class="wrap">
-        <h2>Meet the Owner</h2>
+        <h3>Meet the Owner</h3>
         <p class="placeholder">Owner bio coming soon.</p>
       </div>
     </section>
 
-    <section id="photos" class="section">
+    <section id="photos" class="section alt">
       <div class="wrap">
         <h2>Photos</h2>
         <p class="placeholder">Photos coming soon.</p>
@@ -156,17 +232,8 @@
           <div class="photo-placeholder"></div>
         </div>
       </div>
-    </section>
 
-    <section id="contact" class="section alt">
-      <div class="wrap">
-        <h2>Contact</h2>
-        <p><a href="tel:+17079649314">(707) 964-9314</a></p>
-        <address>
-          220 E Redwood<br>
-          Fort Bragg, CA 95437
-        </address>
-      </div>
+      <p class="back-to-top"><a href="#top">&uarr; Back to top</a></p>
     </section>
 
   </main>
@@ -175,6 +242,11 @@
     <div class="checkered-band" aria-hidden="true"></div>
     <div class="wrap">
       <p>&copy; 2026 Bernillo's Pizza &mdash; Fort Bragg, CA</p>
+      <p><a href="tel:+17079649314">(707) 964-9314</a></p>
+      <address>
+        220 E Redwood<br>
+        Fort Bragg, CA 95437
+      </address>
     </div>
   </footer>
 
