@@ -65,7 +65,7 @@ Any static host works (GitHub Pages, Netlify, S3, etc.) since there's no build p
 
 ### Placeholder content to fill in
 
-- Menu items (currently just says "Just the Classics")
+- Beer table (`#menu` section lists six taps with placeholder names and prices)
 - History section
 - Owner bio
 - Photos of pizzas (`#photos` section has empty placeholder tiles)
