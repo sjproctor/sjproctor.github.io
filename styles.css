@@ -499,8 +499,33 @@ address {
   margin: 0;
 }
 
-.photo-placeholder {
+/* Each photo sits in a figure so a name badge can overlay its corner */
+.photo-tile {
+  position: relative;
+  margin: 0;
+}
+
+.photo-badge {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(100, 19, 19, 0.85);
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+/* Photos crop to their tile; the stripe pattern shows while they load */
+.photo {
+  display: block;
+  width: 100%;
+  height: auto;
   aspect-ratio: 1 / 1;
+  object-fit: cover;
   background-image:
     repeating-linear-gradient(45deg,
       var(--line) 0,
@@ -605,8 +630,11 @@ address {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .hero .photo-placeholder:first-child {
+  .hero .photo-tile:first-child {
     grid-column: 1 / -1;
+  }
+
+  .hero .photo-tile:first-child .photo {
     aspect-ratio: 2 / 1;
   }
 
