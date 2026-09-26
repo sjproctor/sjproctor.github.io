@@ -545,6 +545,81 @@ address {
   border-radius: 0.25rem;
 }
 
+/* Photo links: whole tile is clickable; focus ring sits on the tile */
+.photo-link {
+  display: block;
+  border-radius: 0.25rem;
+}
+
+/* CSS-only lightbox: hidden until its id is the URL fragment (:target) */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.lightbox:target {
+  display: flex;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(43, 35, 32, 0.88);
+}
+
+.lightbox-figure {
+  position: relative;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+}
+
+.lightbox-figure img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100vh - 7rem);
+  width: auto;
+  height: auto;
+  border-radius: 0.25rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.lightbox-figure figcaption {
+  margin-top: 0.75rem;
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+}
+
+.lightbox-close {
+  --focus: var(--white);
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--tap-min);
+  height: var(--tap-min);
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--red-dark);
+  font-size: 1.75rem;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.lightbox-close:hover {
+  background: var(--cream);
+}
+
 /* Social links: inline SVG icon plus label, no external assets */
 .social-links {
   list-style: none;

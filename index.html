@@ -108,21 +108,56 @@
 
           <div class="photo-grid">
             <figure class="photo-tile">
-              <img class="photo" src="images/hero-large.jpg" width="1600" height="1504"
-                alt="A whole pizza topped with pepperoni, sausage, peppers, onion, and squash" />
+              <a class="photo-link" href="#photo-1" aria-label="View larger photo of Classic Combo">
+                <img class="photo" src="images/hero-large.jpg" width="1600" height="1504"
+                  alt="A whole pizza topped with pepperoni, sausage, peppers, onion, and squash" />
+              </a>
               <figcaption class="photo-badge">Classic Combo</figcaption>
             </figure>
             <figure class="photo-tile">
-              <img class="photo" src="images/hero-small-1.jpg" width="1105" height="1200"
-                alt="Close-up of a pizza with olives, peppers, onion, and fresh greens" />
+              <a class="photo-link" href="#photo-2" aria-label="View larger photo of Veggie Delight">
+                <img class="photo" src="images/hero-small-1.jpg" width="1105" height="1200"
+                  alt="Close-up of a pizza with olives, peppers, onion, and fresh greens" />
+              </a>
               <figcaption class="photo-badge">Veggie Delight</figcaption>
             </figure>
             <figure class="photo-tile">
-              <img class="photo" src="images/hero-small-2.jpg" width="1014" height="1200"
-                alt="Close-up of a pizza with prosciutto, sausage, olives, and pepperoncini" />
+              <a class="photo-link" href="#photo-3" aria-label="View larger photo of Meatzilla">
+                <img class="photo" src="images/hero-small-2.jpg" width="1014" height="1200"
+                  alt="Close-up of a pizza with prosciutto, sausage, olives, and pepperoncini" />
+              </a>
               <figcaption class="photo-badge">Meatzilla</figcaption>
             </figure>
           </div>
+        </div>
+
+        <!-- CSS-only lightboxes: shown via :target when a photo link is followed -->
+        <div class="lightbox" id="photo-1" role="dialog" aria-labelledby="photo-1-caption">
+          <a class="lightbox-backdrop" href="#!" aria-label="Close enlarged photo"></a>
+          <figure class="lightbox-figure">
+            <img src="images/hero-large.jpg" width="1600" height="1504"
+              alt="A whole pizza topped with pepperoni, sausage, peppers, onion, and squash" loading="lazy" />
+            <figcaption id="photo-1-caption">Classic Combo</figcaption>
+          </figure>
+          <a class="lightbox-close" href="#!" aria-label="Close enlarged photo">&times;</a>
+        </div>
+        <div class="lightbox" id="photo-2" role="dialog" aria-labelledby="photo-2-caption">
+          <a class="lightbox-backdrop" href="#!" aria-label="Close enlarged photo"></a>
+          <figure class="lightbox-figure">
+            <img src="images/hero-small-1.jpg" width="1105" height="1200"
+              alt="Close-up of a pizza with olives, peppers, onion, and fresh greens" loading="lazy" />
+            <figcaption id="photo-2-caption">Veggie Delight</figcaption>
+          </figure>
+          <a class="lightbox-close" href="#!" aria-label="Close enlarged photo">&times;</a>
+        </div>
+        <div class="lightbox" id="photo-3" role="dialog" aria-labelledby="photo-3-caption">
+          <a class="lightbox-backdrop" href="#!" aria-label="Close enlarged photo"></a>
+          <figure class="lightbox-figure">
+            <img src="images/hero-small-2.jpg" width="1014" height="1200"
+              alt="Close-up of a pizza with prosciutto, sausage, olives, and pepperoncini" loading="lazy" />
+            <figcaption id="photo-3-caption">Meatzilla</figcaption>
+          </figure>
+          <a class="lightbox-close" href="#!" aria-label="Close enlarged photo">&times;</a>
         </div>
       </div>
     </section>
