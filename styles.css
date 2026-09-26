@@ -126,8 +126,8 @@ section[id] {
     repeating-linear-gradient(45deg,
       var(--red) 0,
       var(--red) var(--check-size),
-      var(--white) var(--check-size),
-      var(--white) calc(var(--check-size) * 2));
+      var(--cream) var(--check-size),
+      var(--cream) calc(var(--check-size) * 2));
   background-size: calc(var(--check-size) * 2) calc(var(--check-size) * 2);
 }
 
@@ -323,10 +323,6 @@ section[id] {
 .section {
   padding: var(--section-pad) 0;
   border-top: 1px solid var(--line);
-}
-
-.section.alt {
-  background: var(--white);
 }
 
 .section h2 {
