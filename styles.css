@@ -515,6 +515,18 @@ address {
   white-space: nowrap;
 }
 
+@media (max-width: 26rem) {
+  .photo-badge {
+    right: 0.35rem;
+    bottom: 0.35rem;
+    max-width: calc(100% - 0.7rem);
+    padding: 0.1rem 0.45rem;
+    font-size: 0.65rem;
+    white-space: normal;
+    text-align: center;
+  }
+}
+
 /* Photos crop to their tile; the stripe pattern shows while they load */
 .photo {
   display: block;
