@@ -24,6 +24,8 @@
 
   --wrap-max: 60rem;
   --menu-max: 36rem;
+  --section-pad: 2rem;
+  /* equal space above and below every section divider */
 }
 
 * {
@@ -235,14 +237,47 @@ section[id] {
 }
 
 .hero {
-  padding: 1.5rem 0 0.5rem;
+  padding: var(--section-pad) 0;
+}
+
+/* Copy and photos stack on small screens; side by side from 40rem up */
+.hero-layout {
+  display: grid;
+  gap: 1.5rem;
 }
 
 .hero-intro {
-  max-width: 34rem;
-  margin: 0 auto 1.25rem;
+  margin: 0 0 1rem;
   font-size: 1.05rem;
-  text-align: center;
+  text-align: left;
+}
+
+.hero-intro:last-child {
+  margin-bottom: 0;
+}
+
+/* Two-column checklist of what the shop offers */
+.hero-perks {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.4rem 1rem;
+  font-size: 0.95rem;
+}
+
+.hero-perks li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.hero-perks li::before {
+  content: "\2713";
+  flex-shrink: 0;
+  color: var(--red);
+  font-weight: 700;
 }
 
 .hero-image {
@@ -264,37 +299,44 @@ section[id] {
   border-radius: 0.25rem;
 }
 
+/* Solid red call-to-action, e.g. the Get directions link */
 .button {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 3rem;
+  min-height: var(--tap-min);
   padding: 0 1.25rem;
   border-radius: var(--radius);
   background: var(--red);
   color: var(--white);
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   text-decoration: none;
 }
 
-.button:hover {
+.button:hover,
+.button:focus-visible {
   background: var(--red-dark);
 }
 
+/* Every section opens with a light divider line */
 .section {
-  padding: 2rem 0;
+  padding: var(--section-pad) 0;
+  border-top: 1px solid var(--line);
 }
 
 .section.alt {
   background: var(--white);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
 }
 
 .section h2 {
   color: var(--red);
   font-size: 1.5rem;
+}
+
+/* A second h2 within a section (e.g. Ordering under the menu) gets room above */
+.section h2:not(:first-child) {
+  margin-top: 2.5rem;
 }
 
 .section-lede {
@@ -345,6 +387,14 @@ section[id] {
   margin: 0 0 0.75rem;
   font-size: 0.9rem;
   color: var(--muted);
+}
+
+/* Decorative dot between inline menu options */
+.dot {
+  display: inline-block;
+  margin: 0 0.4rem;
+  color: var(--red);
+  font-weight: 700;
 }
 
 .menu-table {
@@ -405,83 +455,16 @@ section[id] {
   width: 100%;
 }
 
-/* Sizes / crust / sauce options, shown as one panel above the pizza table */
-.menu-options {
-  display: grid;
-  gap: 1rem 2rem;
+/* Extra toppings as a plain two-column list */
+.toppings-list {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
   max-width: var(--menu-max);
-  margin: 1rem 0 0;
-  padding: 1rem 1.25rem;
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 0.5rem;
-}
-
-.menu-option {
-  margin: 0;
-}
-
-.menu-options dt {
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--red);
-  margin-bottom: 0.4rem;
-}
-
-.menu-options dd {
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
-
-.chip {
-  display: inline-block;
-  background: var(--cream);
-  border: 1px solid var(--line-strong);
-  border-radius: 999px;
-  padding: 0.2rem 0.75rem;
-  font-size: 0.85rem;
-  line-height: 1.4;
-}
-
-.menu-extras {
   display: grid;
-  gap: 1rem;
-  max-width: var(--menu-max);
-  margin-top: 0.5rem;
-}
-
-.menu-extra {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 0.5rem;
-  padding: 1rem 1.25rem;
-}
-
-.menu-extra h3 {
-  margin: 0 0 0.4rem;
-  font-family: var(--font-heading);
-  font-size: 1rem;
-  color: var(--red);
-}
-
-.menu-extra-price {
-  margin: 0 0 0.4rem;
-  font-weight: 600;
-}
-
-.menu-extra-note {
-  font-weight: normal;
-  color: var(--muted);
-}
-
-.menu-extra-detail {
-  margin: 0;
-  font-size: 0.9rem;
-  color: var(--muted);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.25rem 1.5rem;
+  font-size: 0.95rem;
 }
 
 address {
@@ -495,6 +478,11 @@ address {
   gap: 2rem;
 }
 
+/* Toppings beside ranch and beer; headings already carry vertical spacing */
+.menu-columns {
+  gap: 0 2rem;
+}
+
 .photo-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -502,12 +490,13 @@ address {
   margin-top: 1rem;
 }
 
-/* Hero shows two placeholders, so use two columns and center the pair */
+/* Hero strip: always three across, tiles shrink to fit on small screens */
+/* Small screens: three equal tiles filling the container width */
 .hero .photo-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  max-width: 40rem;
-  margin-left: auto;
-  margin-right: auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  width: 100%;
+  margin: 0;
 }
 
 .photo-placeholder {
@@ -521,6 +510,41 @@ address {
   background-color: var(--white);
   border: 1px solid rgba(140, 28, 28, 0.2);
   border-radius: 0.25rem;
+}
+
+/* Social links: inline SVG icon plus label, no external assets */
+.social-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: var(--tap-min);
+  color: var(--red);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.social-links a:hover span,
+.social-links a:focus-visible span {
+  text-decoration: underline;
+}
+
+.social-links svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .back-to-top {
@@ -570,8 +594,20 @@ address {
     font-size: 2.75rem;
   }
 
-  .hero {
-    padding: 2.5rem 0 0.5rem;
+  .hero-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  /* Wide screens: one large tile on top, two smaller ones beneath */
+  .hero .photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero .photo-placeholder:first-child {
+    grid-column: 1 / -1;
+    aspect-ratio: 2 / 1;
   }
 
   .menu-table th,
@@ -579,17 +615,7 @@ address {
     padding: 0.5rem 0.75rem;
   }
 
-  .section {
-    padding: 3rem 0;
-  }
-
-  .menu-options {
-    grid-template-columns: auto auto auto;
-    justify-content: start;
-    gap: 1rem 3rem;
-  }
-
-  .menu-extras {
-    grid-template-columns: 1fr 1fr;
+  :root {
+    --section-pad: 3rem;
   }
 }
