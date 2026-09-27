@@ -165,41 +165,28 @@ section[id] {
   position: sticky;
   top: 0;
   z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.25rem;
   background: var(--red-dark);
   box-shadow: 0 2px 8px rgba(43, 35, 32, 0.2);
 }
 
-.site-nav .wrap {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
+/* Both lists wrap and stay centered; on narrow screens the social icons
+   drop to a second line as a group instead of scrolling sideways */
 .site-nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.site-nav ul::-webkit-scrollbar {
-  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .site-nav li {
   flex-shrink: 0;
-}
-
-/* Auto margins center the links when they fit and keep the first one
-   reachable if they ever overflow on a very narrow screen */
-.site-nav li:first-child {
-  margin-left: auto;
-}
-
-.site-nav li:last-child {
-  margin-right: auto;
 }
 
 .site-nav ul a {
@@ -216,6 +203,26 @@ section[id] {
 .site-nav ul a:hover,
 .site-nav ul a:focus {
   text-decoration: underline;
+}
+
+/* Icon-only social links at the end of the nav */
+.site-nav .nav-social a {
+  padding: 0 0.45rem;
+}
+
+.site-nav .nav-social svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.site-nav .nav-social a:hover svg,
+.site-nav .nav-social a:focus svg {
+  opacity: 0.8;
 }
 
 .nav-call {
@@ -547,6 +554,17 @@ address {
 }
 
 @media (max-width: 26rem) {
+  /* The nav wraps to two rows here (text links, then icons), so anchored
+     headings need more clearance; tighter link padding keeps the text
+     links on one row down to about 300px */
+  :root {
+    --nav-offset: 6.25rem;
+  }
+
+  .site-nav .nav-links a {
+    padding: 0 0.4rem;
+  }
+
   .photo-badge {
     right: 0.35rem;
     bottom: 0.35rem;
@@ -701,6 +719,7 @@ address {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.75rem 1.5rem;
 }
 
