@@ -1,0 +1,38 @@
+# Keeps the footer copyright year current without a manual edit.
+# Runs early on January 1st (UTC) and can also be triggered by hand from the
+# Actions tab to test it. Commits only when the year actually changed.
+name: Update copyright year
+
+on:
+  schedule:
+    - cron: "15 6 1 1 *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-year:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Replace year in footer
+        run: |
+          YEAR="$(date -u +%Y)"
+          sed -i -E "s/&copy; [0-9]{4} /\&copy; ${YEAR} /" index.html
+          echo "Footer now reads:"
+          grep -n '&copy;' index.html
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet -- index.html; then
+            echo "Year already current; nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Update footer copyright year to $(date -u +%Y)"
+          git push
