@@ -1,4 +1,4 @@
-/* Bernillo's Pizza — plain CSS, mobile-first, no build tools or external assets. */
+/* Bernillo's Beachside Pizza — plain CSS, mobile-first, no build tools or external assets. */
 
 :root {
   --red: #8c1c1c;
@@ -238,6 +238,12 @@ section[id] {
 
 .hero {
   padding: var(--section-pad) 0;
+}
+
+.hero h2 {
+  color: var(--red);
+  font-size: 1.5rem;
+  margin: 0 0 0.75rem;
 }
 
 /* Copy and photos stack on small screens; side by side from 40rem up */
@@ -576,58 +582,80 @@ address {
   border-radius: 0.25rem;
 }
 
-/* CSS-only lightbox: hidden until its id is the URL fragment (:target) */
+/* CSS-only lightbox: one fixed overlay, shown while any slide inside it is
+   the URL fragment (:has(:target)). Slides live in a horizontal snap-scroll
+   strip so a swipe moves to the next photo without script. */
 .lightbox {
   display: none;
   position: fixed;
   inset: 0;
   z-index: 50;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-}
-
-.lightbox:target {
-  display: flex;
-}
-
-.lightbox-backdrop {
-  position: absolute;
-  inset: 0;
   background: rgba(43, 35, 32, 0.88);
 }
 
-.lightbox-figure {
+.lightbox:has(:target) {
+  display: block;
+}
+
+.lightbox-strip {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.lightbox-strip::-webkit-scrollbar {
+  display: none;
+}
+
+.lightbox-slide {
   position: relative;
+  flex: 0 0 100%;
+  height: 100%;
   margin: 0;
+  padding: 1rem 3.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 100%;
+  justify-content: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
-.lightbox-figure img {
+/* Transparent hit area behind each photo so tapping empty space closes */
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+}
+
+.lightbox-slide img {
+  position: relative;
   display: block;
   max-width: 100%;
-  max-height: calc(100vh - 7rem);
+  max-height: calc(100% - 3rem);
   width: auto;
   height: auto;
   border-radius: 0.25rem;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
-.lightbox-figure figcaption {
+.lightbox-slide figcaption {
+  position: relative;
   margin-top: 0.75rem;
   color: var(--white);
   font-family: var(--font-heading);
   font-size: 1.1rem;
+  text-align: center;
 }
 
-.lightbox-close {
+/* Round white controls: close in the corner, arrows at each edge */
+.lightbox-close,
+.lightbox-arrow {
   --focus: var(--white);
   position: absolute;
-  top: 1rem;
-  right: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -636,13 +664,34 @@ address {
   border-radius: 50%;
   background: var(--white);
   color: var(--red-dark);
-  font-size: 1.75rem;
   line-height: 1;
   text-decoration: none;
 }
 
-.lightbox-close:hover {
+.lightbox-close:hover,
+.lightbox-arrow:hover {
   background: var(--cream);
+}
+
+.lightbox-close {
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.75rem;
+}
+
+.lightbox-arrow {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.25rem;
+  padding-bottom: 0.2rem;
+}
+
+.lightbox-prev {
+  left: 0.5rem;
+}
+
+.lightbox-next {
+  right: 0.5rem;
 }
 
 /* Social links: inline SVG icon plus label, no external assets */
