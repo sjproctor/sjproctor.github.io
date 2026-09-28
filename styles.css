@@ -20,7 +20,9 @@
   /* keeps anchored headings clear of the sticky nav */
 
   --font-heading: Georgia, "Times New Roman", Times, serif;
-  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-body:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
 
   --wrap-max: 60rem;
   --menu-max: 36rem;
@@ -122,12 +124,13 @@ section[id] {
 /* Red-and-white checkered curtain accent, no images required */
 .checkered-band {
   height: 0.75rem;
-  background-image:
-    repeating-linear-gradient(45deg,
-      var(--red) 0,
-      var(--red) var(--check-size),
-      var(--cream) var(--check-size),
-      var(--cream) calc(var(--check-size) * 2));
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--red) 0,
+    var(--red) var(--check-size),
+    var(--cream) var(--check-size),
+    var(--cream) calc(var(--check-size) * 2)
+  );
   background-size: calc(var(--check-size) * 2) calc(var(--check-size) * 2);
 }
 
@@ -301,12 +304,13 @@ section[id] {
   aspect-ratio: 1 / 1;
   object-fit: cover;
   margin: 0 auto;
-  background-image:
-    repeating-linear-gradient(45deg,
-      var(--line) 0,
-      var(--line) 1rem,
-      transparent 1rem,
-      transparent 2rem);
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--line) 0,
+    var(--line) 1rem,
+    transparent 1rem,
+    transparent 2rem
+  );
   background-color: var(--white);
   border: 1px solid rgba(140, 28, 28, 0.2);
   border-radius: 0.25rem;
@@ -443,6 +447,14 @@ section[id] {
   font-variant-numeric: tabular-nums;
 }
 
+/* Pizza names that open a photo gallery for that pizza */
+.menu-photo-link {
+  color: var(--red);
+  font-weight: 600;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
 .menu-table th[scope="col"]:not(:first-child) {
   text-align: right;
 }
@@ -551,6 +563,7 @@ address {
   position: absolute;
   right: 0.5rem;
   bottom: 0.5rem;
+  max-width: calc(100% - 1rem);
   padding: 0.2rem 0.6rem;
   border-radius: 999px;
   background: rgba(100, 19, 19, 0.85);
@@ -558,7 +571,18 @@ address {
   font-family: var(--font-heading);
   font-size: 0.8rem;
   line-height: 1.4;
-  white-space: nowrap;
+  text-align: center;
+}
+
+/* Long names wrap inside the tile and are cut after two lines. The clamp
+   sits on an inner span so a third line can't show through the padding. */
+.photo-badge span {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: 26rem) {
@@ -579,8 +603,6 @@ address {
     max-width: calc(100% - 0.7rem);
     padding: 0.1rem 0.45rem;
     font-size: 0.65rem;
-    white-space: normal;
-    text-align: center;
   }
 }
 
@@ -591,12 +613,13 @@ address {
   height: auto;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  background-image:
-    repeating-linear-gradient(45deg,
-      var(--line) 0,
-      var(--line) 1rem,
-      transparent 1rem,
-      transparent 2rem);
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--line) 0,
+    var(--line) 1rem,
+    transparent 1rem,
+    transparent 2rem
+  );
   background-color: var(--white);
   border: 1px solid rgba(140, 28, 28, 0.2);
   border-radius: 0.25rem;
@@ -672,8 +695,8 @@ address {
   position: relative;
   margin-top: 0.75rem;
   color: var(--white);
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
   text-align: center;
 }
 
