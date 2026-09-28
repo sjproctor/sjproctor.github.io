@@ -23,14 +23,14 @@ The site is content-complete except for the items under [Still to fill in](#stil
 
 ## Files
 
-| Path | Purpose |
-|---|---|
-| `index.html` | All page content, meta tags, JSON-LD schema, lightbox markup |
-| `styles.css` | Mobile-first styles; checkered bands and placeholders are CSS gradients |
-| `images/hero-*.jpg`, `images/*-1600.jpg` | Web-sized photos used on the page (1200–1600px, ~0.4–0.8MB each). Full-resolution originals are not kept in the repo |
-| `images/favicon.png`, `images/apple-touch-icon.png` | Pizza emoji icons; an inline SVG version is also in the `<head>` |
-| `robots.txt`, `sitemap.xml` | Crawler files; contain the site URL |
-| `.github/workflows/update-copyright-year.yml` | Yearly footer-year update |
+| Path                                                | Purpose                                                                                                              |
+| --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `index.html`                                        | All page content, meta tags, JSON-LD schema, lightbox markup                                                         |
+| `styles.css`                                        | Mobile-first styles; checkered bands and placeholders are CSS gradients                                              |
+| `images/hero-*.jpg`, `images/*-1600.jpg`            | Web-sized photos used on the page (1200–1600px, ~0.4–0.8MB each). Full-resolution originals are not kept in the repo |
+| `images/favicon.png`, `images/apple-touch-icon.png` | Pizza emoji icons; an inline SVG version is also in the `<head>`                                                     |
+| `robots.txt`, `sitemap.xml`                         | Crawler files; contain the site URL                                                                                  |
+| `.github/workflows/update-copyright-year.yml`       | Yearly footer-year update                                                                                            |
 
 ## Dependencies
 
@@ -95,13 +95,13 @@ Source notes the site was built from. The page is the canonical version; this is
 
 "Just the Classics." Sizes 12", 14", 16". Crust: thin or regular. Sauce: red or pesto.
 
-| Pizza | 12" | 14" | 16" |
-|---|---|---|---|
-| Cheese | $25 | $31 | $36 |
-| Classic Combo | $32 | $39 | $43 |
-| Hawaiian | $27 | $33 | $38 |
-| Meatzilla | $32 | $39 | $45 |
-| Pepperoni | $27 | $35 | $38 |
+| Pizza          | 12" | 14" | 16" |
+| -------------- | --- | --- | --- |
+| Cheese         | $25 | $31 | $36 |
+| Classic Combo  | $32 | $39 | $43 |
+| Hawaiian       | $27 | $33 | $38 |
+| Meatzilla      | $32 | $39 | $45 |
+| Pepperoni      | $27 | $35 | $38 |
 | Veggie Delight | $32 | $38 | $45 |
 
 Extra toppings $2 / $3 / $4 by size: anchovies, extra cheese, ham, linguica, pepperoni, sausage, bell pepper, garlic, onion, jalapeños, mushrooms, olives, pepperoncini, pineapple, spinach. Ranch dressing $1.25 for 2oz, $4 for 8oz. Six rotating draft beers.
