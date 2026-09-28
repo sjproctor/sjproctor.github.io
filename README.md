@@ -27,8 +27,7 @@ The site is content-complete except for the items under [Still to fill in](#stil
 |---|---|
 | `index.html` | All page content, meta tags, JSON-LD schema, lightbox markup |
 | `styles.css` | Mobile-first styles; checkered bands and placeholders are CSS gradients |
-| `images/hero-*.jpg` | Web-sized photos used on the page (1200–1600px, ~0.4–0.7MB each) |
-| `images/IMG_*.jpeg` | Original uploads (~2.5MB each); not referenced by the page |
+| `images/hero-*.jpg`, `images/*-1600.jpg` | Web-sized photos used on the page (1200–1600px, ~0.4–0.8MB each). Full-resolution originals are not kept in the repo |
 | `images/favicon.png`, `images/apple-touch-icon.png` | Pizza emoji icons; an inline SVG version is also in the `<head>` |
 | `robots.txt`, `sitemap.xml` | Crawler files; contain the site URL |
 | `.github/workflows/update-copyright-year.yml` | Yearly footer-year update |
