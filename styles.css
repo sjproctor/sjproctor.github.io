@@ -533,6 +533,14 @@ address {
   margin: 0;
 }
 
+/* Short note under the hero photos explaining they open the lightbox */
+.photo-hint {
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  text-align: center;
+  color: var(--muted);
+}
+
 /* Each photo sits in a figure so a name badge can overlay its corner */
 .photo-tile {
   position: relative;

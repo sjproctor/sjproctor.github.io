@@ -85,8 +85,6 @@
       <li><a href="#hours-location">Hours &amp; Location</a></li>
       <li><a href="#about">About</a></li>
     </ul>
-    <!-- Icon-only social links; kept in their own list so they wrap to a
-         second line together on narrow screens -->
     <!-- TODO: replace with Bernillo's actual Facebook and Instagram page URLs -->
     <ul class="nav-social">
       <li>
@@ -133,28 +131,31 @@
             </ul>
           </div>
 
-          <div class="photo-grid">
-            <figure class="photo-tile">
-              <a class="photo-link" href="#photo-1" aria-label="View larger photo of Classic Combo">
-                <img class="photo" src="images/hero-large.jpg" width="1600" height="1504"
-                  alt="A whole pizza topped with pepperoni, sausage, peppers, onion, and squash" />
-              </a>
-              <figcaption class="photo-badge">Classic Combo</figcaption>
-            </figure>
-            <figure class="photo-tile">
-              <a class="photo-link" href="#photo-2" aria-label="View larger photo of Veggie Delight">
-                <img class="photo" src="images/hero-small-1.jpg" width="1105" height="1200"
-                  alt="Close-up of a pizza with olives, peppers, onion, and fresh greens" />
-              </a>
-              <figcaption class="photo-badge">Veggie Delight</figcaption>
-            </figure>
-            <figure class="photo-tile">
-              <a class="photo-link" href="#photo-3" aria-label="View larger photo of Meatzilla">
-                <img class="photo" src="images/hero-small-2.jpg" width="1014" height="1200"
-                  alt="Close-up of a pizza with prosciutto, sausage, olives, and pepperoncini" />
-              </a>
-              <figcaption class="photo-badge">Meatzilla</figcaption>
-            </figure>
+          <div class="hero-photos">
+            <div class="photo-grid">
+              <figure class="photo-tile">
+                <a class="photo-link" href="#photo-1" aria-label="View larger photo of Classic Combo">
+                  <img class="photo" src="images/hero-large.jpg" width="1600" height="1504"
+                    alt="A whole pizza topped with pepperoni, sausage, peppers, onion, and squash" />
+                </a>
+                <figcaption class="photo-badge">Classic Combo</figcaption>
+              </figure>
+              <figure class="photo-tile">
+                <a class="photo-link" href="#photo-2" aria-label="View larger photo of Veggie Delight">
+                  <img class="photo" src="images/hero-small-1.jpg" width="1105" height="1200"
+                    alt="Close-up of a pizza with olives, peppers, onion, and fresh greens" />
+                </a>
+                <figcaption class="photo-badge">Veggie Delight</figcaption>
+              </figure>
+              <figure class="photo-tile">
+                <a class="photo-link" href="#photo-3" aria-label="View larger photo of Meatzilla">
+                  <img class="photo" src="images/hero-small-2.jpg" width="1014" height="1200"
+                    alt="Close-up of a pizza with prosciutto, sausage, olives, and pepperoncini" />
+                </a>
+                <figcaption class="photo-badge">Meatzilla</figcaption>
+              </figure>
+            </div>
+            <p class="photo-hint">Tap or click any photo to see a photo gallery.</p>
           </div>
         </div>
 
@@ -168,8 +169,8 @@
               <img src="images/hero-large.jpg" width="1600" height="1504"
                 alt="A whole pizza topped with pepperoni, sausage, peppers, onion, and squash" loading="lazy" />
               <figcaption id="photo-1-caption">Classic Combo</figcaption>
-              <a class="lightbox-arrow lightbox-prev" href="#photo-3"
-                aria-label="Previous photo: Meatzilla">&lsaquo;</a>
+              <a class="lightbox-arrow lightbox-prev" href="#photo-7"
+                aria-label="Previous photo: Vegetarian">&lsaquo;</a>
               <a class="lightbox-arrow lightbox-next" href="#photo-2"
                 aria-label="Next photo: Veggie Delight">&rsaquo;</a>
             </figure>
@@ -189,6 +190,45 @@
               <figcaption id="photo-3-caption">Meatzilla</figcaption>
               <a class="lightbox-arrow lightbox-prev" href="#photo-2"
                 aria-label="Previous photo: Veggie Delight">&lsaquo;</a>
+              <a class="lightbox-arrow lightbox-next" href="#photo-4" aria-label="Next photo: Cheese">&rsaquo;</a>
+            </figure>
+            <!-- Lightbox-only photos: not shown in the hero grid, reachable by
+                 swiping or using the arrows once the lightbox is open -->
+            <figure class="lightbox-slide" id="photo-4" aria-labelledby="photo-4-caption">
+              <a class="lightbox-backdrop" href="#!" aria-label="Close enlarged photos"></a>
+              <img src="images/cheese-1600.jpg" width="1454" height="1600"
+                alt="A cheese pizza topped with fresh basil leaves and grated parmesan" loading="lazy" />
+              <figcaption id="photo-4-caption">Cheese</figcaption>
+              <a class="lightbox-arrow lightbox-prev" href="#photo-3"
+                aria-label="Previous photo: Meatzilla">&lsaquo;</a>
+              <a class="lightbox-arrow lightbox-next" href="#photo-5" aria-label="Next photo: Pepperoni">&rsaquo;</a>
+            </figure>
+            <figure class="lightbox-slide" id="photo-5" aria-labelledby="photo-5-caption">
+              <a class="lightbox-backdrop" href="#!" aria-label="Close enlarged photos"></a>
+              <img src="images/pepperoni-1600.jpg" width="1421" height="1600"
+                alt="Close-up of a pepperoni pizza with fresh basil leaves and grated parmesan" loading="lazy" />
+              <figcaption id="photo-5-caption">Pepperoni</figcaption>
+              <a class="lightbox-arrow lightbox-prev" href="#photo-4" aria-label="Previous photo: Cheese">&lsaquo;</a>
+              <a class="lightbox-arrow lightbox-next" href="#photo-6"
+                aria-label="Next photo: Half &amp; Half">&rsaquo;</a>
+            </figure>
+            <figure class="lightbox-slide" id="photo-6" aria-labelledby="photo-6-caption">
+              <a class="lightbox-backdrop" href="#!" aria-label="Close enlarged photos"></a>
+              <img src="images/half-n-half-1600.jpg" width="1441" height="1600"
+                alt="A half-and-half pizza, ham on one side and tomato and basil on the other, dusted with parmesan"
+                loading="lazy" />
+              <figcaption id="photo-6-caption">Half &amp; Half</figcaption>
+              <a class="lightbox-arrow lightbox-prev" href="#photo-5"
+                aria-label="Previous photo: Pepperoni">&lsaquo;</a>
+              <a class="lightbox-arrow lightbox-next" href="#photo-7" aria-label="Next photo: Vegetarian">&rsaquo;</a>
+            </figure>
+            <figure class="lightbox-slide" id="photo-7" aria-labelledby="photo-7-caption">
+              <a class="lightbox-backdrop" href="#!" aria-label="Close enlarged photos"></a>
+              <img src="images/vegetarian-1600.jpg" width="1600" height="1370"
+                alt="A pizza piled with peppers, tomatoes, squash, spinach, and fresh greens" loading="lazy" />
+              <figcaption id="photo-7-caption">Vegetarian</figcaption>
+              <a class="lightbox-arrow lightbox-prev" href="#photo-6"
+                aria-label="Previous photo: Half &amp; Half">&lsaquo;</a>
               <a class="lightbox-arrow lightbox-next" href="#photo-1"
                 aria-label="Next photo: Classic Combo">&rsaquo;</a>
             </figure>
