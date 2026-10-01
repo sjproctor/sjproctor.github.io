@@ -690,6 +690,34 @@ address {
   right: 0.5rem;
 }
 
+/* Fallback for browsers without :has() (Firefox before 121, Safari before
+   15.4, Chrome before 105). They can't show the parent lightbox, so the
+   targeted slide becomes the overlay by itself. Arrows and the backdrop
+   still work as fragment links; the swipe strip and the corner close
+   button are not available in this mode. */
+@supports not selector(:has(*)) {
+  .lightbox,
+  .lightbox-strip {
+    display: contents;
+  }
+
+  .lightbox-slide {
+    display: none;
+  }
+
+  .lightbox-slide:target {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    background: rgba(43, 35, 32, 0.88);
+  }
+
+  .lightbox-close {
+    display: none;
+  }
+}
+
 /* Social links: inline SVG icon plus label, no external assets */
 .social-links {
   list-style: none;
