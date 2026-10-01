@@ -18,7 +18,7 @@ The site is content-complete except for the items under [Still to fill in](#stil
 
 - **History** (`#about`) — currently "History coming soon."
 - **Social links** (`#about`) — point at facebook.com and instagram.com homepages; replace with the real page URLs and add them to the JSON-LD as `sameAs`.
-- **Site URL** — `robots.txt` and `sitemap.xml` assume GitHub Pages at `https://sjproctor.github.io/bernillos/`. Change both if the site moves to a custom domain, and add a `<link rel="canonical">`, `og:url`, and `og:image` to the `<head>` at that point.
+- **Site URL** — the site lives at `https://bernillosbeachsidepizza.com/`. That URL appears in `robots.txt`, `sitemap.xml`, and the `<head>` (`<link rel="canonical">`, `og:url`, `og:image`, and the JSON-LD `url`/`image`). Update all of them if the domain ever changes.
 - **Pizza names on photos** — the badges say Classic Combo, Veggie Delight, and Meatzilla based on what's visible; correct them in the `figcaption` elements if wrong.
 
 ## Files
@@ -76,8 +76,8 @@ Each hero photo is a `<figure class="photo-tile">` containing a link, an `<img>`
 All SEO tags live in the `<head>`:
 
 - **Title and meta description** — keep "Fort Bragg" and "Pizza" in the title; keep the description under about 160 characters.
-- **Open Graph** — `og:title` and `og:description` should match the title and description. Add `og:image` and `og:url` once the site has a fixed URL.
-- **JSON-LD** — the `Restaurant` object holds name, address, phone, and hours. Update it whenever those change. Good next additions: `url`, `image`, `priceRange`, `geo`, `hasMap`, `sameAs`, and a `hasMenu` block. Validate with [Google's Rich Results Test](https://search.google.com/test/rich-results).
+- **Open Graph** — `og:title` is the short name shown in text message and social previews; `og:description` should match the meta description. `og:image` points at `images/og-image.jpg`, a 1200×630 crop of the hero photo, via an absolute URL.
+- **JSON-LD** — the `Restaurant` object holds name, address, phone, and hours. Update it whenever those change. Good next additions: `priceRange`, `geo`, `hasMap`, `sameAs`, and a `hasMenu` block. Validate with [Google's Rich Results Test](https://search.google.com/test/rich-results).
 
 Off-page, the biggest lever is a claimed Google Business Profile whose name, address, and phone match the site exactly.
 

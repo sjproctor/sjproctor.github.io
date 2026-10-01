@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sjproctor.github.io/bernillos/sitemap.xml
+Sitemap: https://bernillosbeachsidepizza.com/sitemap.xml
