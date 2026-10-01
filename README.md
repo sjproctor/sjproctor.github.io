@@ -1,36 +1,34 @@
 # Bernillo's Beachside Pizza
 
-Single-page website for Bernillo's Beachside Pizza, an old-school pizza parlor in downtown Fort Bragg, CA. Static HTML and CSS, no build step, no JavaScript.
+Single-page website for Bernillo's Beachside Pizza, an old-school pizza parlor in downtown Fort Bragg, CA. Static HTML and CSS, no build step. The only JavaScript is a short inline script that adds keyboard support to the photo lightboxes.
 
 ## Status
 
-The site is content-complete except for the items under [Still to fill in](#still-to-fill-in). Everything below is live in `index.html`:
+The site is content-complete. Everything below is live in `index.html`:
 
-- **Hero** — heading, two intro paragraphs, a six-item checklist (dine in, takeout, etc.), and three pizza photos with name badges. Text sits left and photos right on wide screens; photos drop below the text on phones.
-- **Photo lightbox** — clicking a hero photo opens a full-screen view. Swipe or use the arrow buttons to move between photos, tap outside or the × to close. Built with `:target`, `:has()`, and CSS scroll-snap; no script.
-- **Pizzas** — price table by size, crust and sauce options, extra toppings list, ranch dressing, beer note, and an Ordering line with a tap-to-call number.
+- **Hero** — heading, intro paragraphs, an eight-item checklist (dine in, takeout, etc.), and three pizza photos with name badges plus a hint that they open a gallery. Text sits left and photos right on wide screens; photos drop below the text on phones. The hero photos are served as WebP with JPEG fallback at 400, 800, and 1600px via `srcset`.
+- **Photo lightboxes** — clicking a hero photo opens a full-screen gallery of all pizza photos; clicking a pizza name in the menu table opens a gallery of just that pizza. Swipe or use the arrow buttons to move between photos, tap outside or the × to close. Built with `:target`, `:has()`, and CSS scroll-snap. An inline script at the end of `<body>` adds keyboard support: focus moves into the open lightbox, Tab stays inside it, Escape closes, the arrow keys step between photos, and focus returns to the opening link.
+- **Pizzas** — price table by size (pizza names link to photo galleries, except Meatzilla which has no photo yet), crust and sauce options, extra toppings list, ranch dressing, beer note, and an Ordering line with a tap-to-call number.
 - **Hours & Location** — hours table, address, phone, a Get directions button, and an embedded Google Map.
-- **About** — history placeholder and Facebook/Instagram links with inline SVG icons.
-- **SEO** — title, meta description, Open Graph tags, `Restaurant` JSON-LD, pizza-emoji favicon, `robots.txt`, and `sitemap.xml`.
+- **About** — short history and a payment note. Facebook and Instagram links with inline SVG icons sit in the nav (icons only) and the footer.
+- **SEO** — title, meta description, canonical link, Open Graph tags with a preview image, `Restaurant` JSON-LD (address, hours, phone, price range, coordinates, social profiles), pizza-emoji favicon, `robots.txt`, and `sitemap.xml`.
 - **Copyright year** — a GitHub Action updates the footer year every January 1st.
 
 ### Still to fill in
 
-- **History** (`#about`) — currently "History coming soon."
-- **Social links** (`#about`) — point at facebook.com and instagram.com homepages; replace with the real page URLs and add them to the JSON-LD as `sameAs`.
+- **Meatzilla photo** — the only pizza in the table without a gallery link. Add a `meatzilla-1.jpg`, a lightbox like the others in `#menu`, and wrap the table cell in a `menu-photo-link`.
 - **Site URL** — the site lives at `https://bernillosbeachsidepizza.com/`. That URL appears in `robots.txt`, `sitemap.xml`, and the `<head>` (`<link rel="canonical">`, `og:url`, `og:image`, and the JSON-LD `url`/`image`). Update all of them if the domain ever changes.
-- **Pizza names on photos** — the badges say Classic Combo, Veggie Delight, and Meatzilla based on what's visible; correct them in the `figcaption` elements if wrong.
 
 ## Files
 
-| Path                                                | Purpose                                                                                                              |
-| --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `index.html`                                        | All page content, meta tags, JSON-LD schema, lightbox markup                                                         |
-| `styles.css`                                        | Mobile-first styles; checkered bands and placeholders are CSS gradients                                              |
-| `images/hero-*.jpg`, `images/*-1600.jpg`            | Web-sized photos used on the page (1200–1600px, ~0.4–0.8MB each). Full-resolution originals are not kept in the repo |
-| `images/favicon.png`, `images/apple-touch-icon.png` | Pizza emoji icons; an inline SVG version is also in the `<head>`                                                     |
-| `robots.txt`, `sitemap.xml`                         | Crawler files; contain the site URL                                                                                  |
-| `.github/workflows/update-copyright-year.yml`       | Yearly footer-year update                                                                                            |
+| Path                                                | Purpose                                                                                                                                                                                                                                            |
+| --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `index.html`                                        | All page content, meta tags, JSON-LD schema, lightbox markup, and the inline lightbox keyboard script                                                                                                                                              |
+| `styles.css`                                        | Mobile-first styles; checkered bands and placeholders are CSS gradients                                                                                                                                                                            |
+| `images/*.jpg`, `images/*.webp`                     | Web-sized photos named by pizza (1600px long side, ~0.4–0.8MB). The three hero photos also have `-400`/`-800` JPEG and WebP variants for `srcset`. `og-image.jpg` is the 1200×630 link preview. Full-resolution originals are not kept in the repo |
+| `images/favicon.png`, `images/apple-touch-icon.png` | Pizza emoji icons; an inline SVG version is also in the `<head>`                                                                                                                                                                                   |
+| `robots.txt`, `sitemap.xml`                         | Crawler files; contain the site URL                                                                                                                                                                                                                |
+| `.github/workflows/update-copyright-year.yml`       | Yearly footer-year update                                                                                                                                                                                                                          |
 
 ## Dependencies
 
@@ -44,11 +42,11 @@ Open `index.html` directly in a browser, or serve it locally:
 python3 -m http.server
 ```
 
-The lightbox uses URL fragments (`#photo-1`, etc.), so it works from a plain file URL too.
+The lightboxes use URL fragments (`#photo-1`, `#cheese-1`, etc.), so they work from a plain file URL too.
 
 ## Deployment
 
-Any static host works. Upload the whole repo except `.git` and `.github`, or point GitHub Pages at the `main` branch root. The `images/` folder, `robots.txt`, and `sitemap.xml` must ship alongside `index.html` and `styles.css`.
+Any static host works. Upload the whole repo except `.git`, `.github`, and `.vscode`, or point GitHub Pages at the `main` branch root. The `images/` folder, `robots.txt`, and `sitemap.xml` must ship alongside `index.html` and `styles.css`. Make sure the host gzips HTML and CSS and sends long cache headers for `images/`. When content changes, update `lastmod` in `sitemap.xml`.
 
 ### Copyright year workflow
 
@@ -69,7 +67,9 @@ Prices are in the `.menu-table` in `#menu`. Crust/sauce and topping prices are t
 
 ### Photos
 
-Each hero photo is a `<figure class="photo-tile">` containing a link, an `<img>`, and a `figcaption` badge. The first photo takes the large landscape slot on wide screens, so it should be the widest shot. The lightbox slides at the end of `#hero` mirror the same three images and captions; update both when swapping a photo. Resize new photos to about 1600px on the long side before adding them.
+Each hero photo is a `<figure class="photo-tile">` containing a link, a `<picture>` with WebP and JPEG `srcset`, and a `figcaption` badge. The first photo takes the large landscape slot on wide screens, so it should be the widest shot. The main lightbox at the end of `#hero` holds every photo; its first three slides mirror the hero tiles, so update both when swapping a tile. Per-pizza lightboxes live after the menu table in `#menu` and repeat the relevant slides, so a caption or alt change for a pizza is made in both places.
+
+To add a photo: resize it to 1600px on the long side (`sips -Z 1600`), and for a hero tile also make 400 and 800px JPEGs plus WebP versions (`cwebp -q 80 -resize 400 0`). Keep the `width`/`height` attributes equal to the file's real pixel size.
 
 ### SEO tags
 
@@ -77,7 +77,7 @@ All SEO tags live in the `<head>`:
 
 - **Title and meta description** — keep "Fort Bragg" and "Pizza" in the title; keep the description under about 160 characters.
 - **Open Graph** — `og:title` is the short name shown in text message and social previews; `og:description` should match the meta description. `og:image` points at `images/og-image.jpg`, a 1200×630 crop of the hero photo, via an absolute URL.
-- **JSON-LD** — the `Restaurant` object holds name, address, phone, and hours. Update it whenever those change. Good next additions: `priceRange`, `geo`, `hasMap`, `sameAs`, and a `hasMenu` block. Validate with [Google's Rich Results Test](https://search.google.com/test/rich-results).
+- **JSON-LD** — the `Restaurant` object holds name, address, phone, and hours. Update it whenever those change. It also carries `priceRange`, `geo`, and `sameAs`. Good next additions: `hasMap` and a `hasMenu` block. Validate with [Google's Rich Results Test](https://search.google.com/test/rich-results).
 
 Off-page, the biggest lever is a claimed Google Business Profile whose name, address, and phone match the site exactly.
 

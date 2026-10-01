@@ -111,10 +111,6 @@ section[id] {
   scroll-margin-top: var(--nav-offset);
 }
 
-.muted {
-  color: var(--muted);
-}
-
 .wrap {
   max-width: var(--wrap-max);
   margin: 0 auto;
@@ -228,24 +224,6 @@ section[id] {
   opacity: 0.8;
 }
 
-.nav-call {
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  min-height: 2.25rem;
-  padding: 0 1rem;
-  border-radius: 999px;
-  background: var(--white);
-  color: var(--red-dark);
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-decoration: none;
-}
-
-.nav-call:hover {
-  background: var(--cream);
-}
-
 .hero {
   padding: var(--section-pad) 0;
 }
@@ -296,26 +274,6 @@ section[id] {
   font-weight: 700;
 }
 
-.hero-image {
-  display: block;
-  width: 100%;
-  max-width: 40rem;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  margin: 0 auto;
-  background-image: repeating-linear-gradient(
-    45deg,
-    var(--line) 0,
-    var(--line) 1rem,
-    transparent 1rem,
-    transparent 2rem
-  );
-  background-color: var(--white);
-  border: 1px solid rgba(140, 28, 28, 0.2);
-  border-radius: 0.25rem;
-}
-
 /* Solid red call-to-action, e.g. the Get directions link */
 .button {
   display: inline-flex;
@@ -355,10 +313,6 @@ section[id] {
 .section-lede {
   font-style: italic;
   margin-top: 0;
-}
-
-.placeholder {
-  color: var(--muted);
 }
 
 .hours-table {
@@ -457,23 +411,6 @@ section[id] {
 
 .menu-table th[scope="col"]:not(:first-child) {
   text-align: right;
-}
-
-/* Beer table: tap number is narrow, beer name fills the middle */
-.beer-table th[scope="row"] {
-  width: 3rem;
-  text-align: center;
-}
-
-.beer-table th[scope="col"]:first-child {
-  text-align: center;
-}
-
-.beer-table td:nth-child(2),
-.beer-table th[scope="col"]:nth-child(2) {
-  text-align: left;
-  white-space: normal;
-  width: 100%;
 }
 
 /* Extra toppings as a plain two-column list */
