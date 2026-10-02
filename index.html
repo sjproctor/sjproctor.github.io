@@ -3,11 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bernillo's Beachside Pizza | Fort Bragg, CA | Pizza Near Me</title>
+    <title>
+      Bernillo's Beachside Pizza | Classic Pizza in Fort Bragg, CA Since 1980
+    </title>
     <meta
       name="description"
-      content="Bernillo's Beachside Pizza is a classic pizza parlor in downtown Fort Bragg, CA, serving just the classics."
+      content="Old-school pizza parlor in downtown Fort Bragg since 1980. Original dough &amp; sauce, local produce, draft beer. Dine in or call (707) 964-9314 for takeout."
     />
+    <meta name="geo.region" content="US-CA" />
+    <meta name="geo.placename" content="Fort Bragg" />
     <meta name="theme-color" content="#8c1c1c" />
     <meta
       name="google-site-verification"
@@ -18,7 +22,7 @@
     <meta property="og:title" content="Bernillo's Beachside Pizza" />
     <meta
       property="og:description"
-      content="Pizza parlor in downtown Fort Bragg, CA. Serving just the classics."
+      content="Old-school pizza parlor in downtown Fort Bragg since 1980. Original dough &amp; sauce, local produce, draft beer. Dine in or call (707) 964-9314 for takeout."
     />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
@@ -55,11 +59,23 @@
       {
         "@context": "https://schema.org",
         "@type": "Restaurant",
+        "@id": "https://bernillosbeachsidepizza.com/#restaurant",
         "name": "Bernillo's Beachside Pizza",
+        "alternateName": ["Bernillo's Pizza", "Bernillo's"],
         "url": "https://bernillosbeachsidepizza.com/",
-        "image": "https://bernillosbeachsidepizza.com/images/og-image.jpg",
+        "image": [
+          "https://bernillosbeachsidepizza.com/images/og-image.jpg",
+          "https://bernillosbeachsidepizza.com/images/veggie-add-meat.jpg",
+          "https://bernillosbeachsidepizza.com/images/combo-veggie.jpg",
+          "https://bernillosbeachsidepizza.com/images/pepperoni-2.jpg"
+        ],
         "servesCuisine": "Pizza",
-        "priceRange": "$30-50",
+        "priceRange": "$25–$45",
+        "foundingDate": "1980",
+        "acceptsReservations": false,
+        "paymentAccepted": "Cash, Credit Card, Apple Pay",
+        "currenciesAccepted": "USD",
+        "hasMap": "https://www.google.com/maps?cid=17062750359389575911",
         "sameAs": [
           "https://www.facebook.com/BernillosOceansidePizza",
           "https://www.instagram.com/bernillosbeachsidepizza/"
@@ -103,7 +119,74 @@
             "opens": "15:30",
             "closes": "20:00"
           }
-        ]
+        ],
+        "hasMenu": {
+          "@type": "Menu",
+          "name": "Pizzas",
+          "url": "https://bernillosbeachsidepizza.com/#menu",
+          "description": "Just the classics. Regular or thin crust, red or pesto sauce. Extra toppings $2 / $3 / $4 by size.",
+          "hasMenuSection": {
+            "@type": "MenuSection",
+            "name": "Pizzas",
+            "hasMenuItem": [
+              {
+                "@type": "MenuItem",
+                "name": "Cheese",
+                "offers": [
+                  { "@type": "Offer", "name": "12-inch", "price": "25", "priceCurrency": "USD" },
+                  { "@type": "Offer", "name": "14-inch", "price": "31", "priceCurrency": "USD" },
+                  { "@type": "Offer", "name": "16-inch", "price": "36", "priceCurrency": "USD" }
+                ]
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Classic Combo",
+                "offers": [
+                  { "@type": "Offer", "name": "12-inch", "price": "32", "priceCurrency": "USD" },
+                  { "@type": "Offer", "name": "14-inch", "price": "39", "priceCurrency": "USD" },
+                  { "@type": "Offer", "name": "16-inch", "price": "43", "priceCurrency": "USD" }
+                ]
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Hawaiian",
+                "offers": [
+                  { "@type": "Offer", "name": "12-inch", "price": "27", "priceCurrency": "USD" },
+                  { "@type": "Offer", "name": "14-inch", "price": "33", "priceCurrency": "USD" },
+                  { "@type": "Offer", "name": "16-inch", "price": "38", "priceCurrency": "USD" }
+                ]
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Meatzilla",
+                "offers": [
+                  { "@type": "Offer", "name": "12-inch", "price": "32", "priceCurrency": "USD" },
+                  { "@type": "Offer", "name": "14-inch", "price": "39", "priceCurrency": "USD" },
+                  { "@type": "Offer", "name": "16-inch", "price": "45", "priceCurrency": "USD" }
+                ]
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Pepperoni",
+                "offers": [
+                  { "@type": "Offer", "name": "12-inch", "price": "27", "priceCurrency": "USD" },
+                  { "@type": "Offer", "name": "14-inch", "price": "35", "priceCurrency": "USD" },
+                  { "@type": "Offer", "name": "16-inch", "price": "38", "priceCurrency": "USD" }
+                ]
+              },
+              {
+                "@type": "MenuItem",
+                "name": "Veggie Delight",
+                "suitableForDiet": "https://schema.org/VegetarianDiet",
+                "offers": [
+                  { "@type": "Offer", "name": "12-inch", "price": "32", "priceCurrency": "USD" },
+                  { "@type": "Offer", "name": "14-inch", "price": "38", "priceCurrency": "USD" },
+                  { "@type": "Offer", "name": "16-inch", "price": "45", "priceCurrency": "USD" }
+                ]
+              }
+            ]
+          }
+        }
       }
     </script>
   </head>
@@ -323,13 +406,16 @@
                   href="#!"
                   aria-label="Close enlarged photos"
                 ></a>
-                <img
-                  src="images/veggie-add-meat.jpg"
-                  width="1600"
-                  height="1504"
-                  alt="A whole pizza topped with pepperoni, sausage, peppers, onion, and squash"
-                  loading="lazy"
-                />
+                <picture>
+                  <source type="image/webp" srcset="images/veggie-add-meat.webp" />
+                  <img
+                    src="images/veggie-add-meat.jpg"
+                    width="1600"
+                    height="1504"
+                    alt="A whole pizza topped with pepperoni, sausage, peppers, onion, and squash"
+                    loading="lazy"
+                  />
+                </picture>
                 <a
                   class="lightbox-arrow lightbox-next"
                   href="#photo-2"
@@ -355,13 +441,16 @@
                   href="#!"
                   aria-label="Close enlarged photos"
                 ></a>
-                <img
-                  src="images/combo-veggie.jpg"
-                  width="1105"
-                  height="1200"
-                  alt="Close-up of a pizza with olives, peppers, onion, and fresh greens"
-                  loading="lazy"
-                />
+                <picture>
+                  <source type="image/webp" srcset="images/combo-veggie.webp" />
+                  <img
+                    src="images/combo-veggie.jpg"
+                    width="1105"
+                    height="1200"
+                    alt="Close-up of a pizza with olives, peppers, onion, and fresh greens"
+                    loading="lazy"
+                  />
+                </picture>
                 <a
                   class="lightbox-arrow lightbox-prev"
                   href="#photo-1"
@@ -398,13 +487,16 @@
                   href="#!"
                   aria-label="Close enlarged photos"
                 ></a>
-                <img
-                  src="images/pepperoni-2.jpg"
-                  width="1549"
-                  height="1600"
-                  alt="A whole pepperoni pizza with fresh basil leaves and a heavy dusting of parmesan"
-                  loading="lazy"
-                />
+                <picture>
+                  <source type="image/webp" srcset="images/pepperoni-2.webp" />
+                  <img
+                    src="images/pepperoni-2.jpg"
+                    width="1549"
+                    height="1600"
+                    alt="A whole pepperoni pizza with fresh basil leaves and a heavy dusting of parmesan"
+                    loading="lazy"
+                  />
+                </picture>
                 <a
                   class="lightbox-arrow lightbox-prev"
                   href="#photo-2"
@@ -441,13 +533,16 @@
                   href="#!"
                   aria-label="Close enlarged photos"
                 ></a>
-                <img
-                  src="images/cheese-1.jpg"
-                  width="1454"
-                  height="1600"
-                  alt="A cheese pizza topped with fresh basil leaves and grated parmesan"
-                  loading="lazy"
-                />
+                <picture>
+                  <source type="image/webp" srcset="images/cheese-1.webp" />
+                  <img
+                    src="images/cheese-1.jpg"
+                    width="1454"
+                    height="1600"
+                    alt="A cheese pizza topped with fresh basil leaves and grated parmesan"
+                    loading="lazy"
+                  />
+                </picture>
                 <a
                   class="lightbox-arrow lightbox-prev"
                   href="#photo-3"
@@ -482,13 +577,16 @@
                   href="#!"
                   aria-label="Close enlarged photos"
                 ></a>
-                <img
-                  src="images/cheese-2.jpg"
-                  width="1600"
-                  height="1369"
-                  alt="A sliced cheese pizza topped with parsley, basil, and grated parmesan"
-                  loading="lazy"
-                />
+                <picture>
+                  <source type="image/webp" srcset="images/cheese-2.webp" />
+                  <img
+                    src="images/cheese-2.jpg"
+                    width="1600"
+                    height="1369"
+                    alt="A sliced cheese pizza topped with parsley, basil, and grated parmesan"
+                    loading="lazy"
+                  />
+                </picture>
                 <a
                   class="lightbox-arrow lightbox-prev"
                   href="#photo-4"
@@ -523,13 +621,16 @@
                   href="#!"
                   aria-label="Close enlarged photos"
                 ></a>
-                <img
-                  src="images/pepperoni-1.jpg"
-                  width="1421"
-                  height="1600"
-                  alt="Close-up of a pepperoni pizza with fresh basil leaves and grated parmesan"
-                  loading="lazy"
-                />
+                <picture>
+                  <source type="image/webp" srcset="images/pepperoni-1.webp" />
+                  <img
+                    src="images/pepperoni-1.jpg"
+                    width="1421"
+                    height="1600"
+                    alt="Close-up of a pepperoni pizza with fresh basil leaves and grated parmesan"
+                    loading="lazy"
+                  />
+                </picture>
                 <a
                   class="lightbox-arrow lightbox-prev"
                   href="#photo-5"
@@ -564,13 +665,16 @@
                   href="#!"
                   aria-label="Close enlarged photos"
                 ></a>
-                <img
-                  src="images/hawaiian.jpg"
-                  width="1436"
-                  height="1600"
-                  alt="A Hawaiian pizza topped with ham, pineapple, and fresh basil"
-                  loading="lazy"
-                />
+                <picture>
+                  <source type="image/webp" srcset="images/hawaiian.webp" />
+                  <img
+                    src="images/hawaiian.jpg"
+                    width="1436"
+                    height="1600"
+                    alt="A Hawaiian pizza topped with ham, pineapple, and fresh basil"
+                    loading="lazy"
+                  />
+                </picture>
                 <a
                   class="lightbox-arrow lightbox-prev"
                   href="#photo-6"
@@ -605,13 +709,16 @@
                   href="#!"
                   aria-label="Close enlarged photos"
                 ></a>
-                <img
-                  src="images/hawaiian-tomato.jpg"
-                  width="1441"
-                  height="1600"
-                  alt="A half-and-half pizza, ham and pineapple on one side and tomato and basil on the other, dusted with parmesan"
-                  loading="lazy"
-                />
+                <picture>
+                  <source type="image/webp" srcset="images/hawaiian-tomato.webp" />
+                  <img
+                    src="images/hawaiian-tomato.jpg"
+                    width="1441"
+                    height="1600"
+                    alt="A half-and-half pizza, ham and pineapple on one side and tomato and basil on the other, dusted with parmesan"
+                    loading="lazy"
+                  />
+                </picture>
                 <a
                   class="lightbox-arrow lightbox-prev"
                   href="#photo-7"
@@ -646,13 +753,16 @@
                   href="#!"
                   aria-label="Close enlarged photos"
                 ></a>
-                <img
-                  src="images/veggie-delight-1.jpg"
-                  width="1600"
-                  height="1370"
-                  alt="A pizza piled with peppers, tomatoes, squash, spinach, and fresh greens"
-                  loading="lazy"
-                />
+                <picture>
+                  <source type="image/webp" srcset="images/veggie-delight-1.webp" />
+                  <img
+                    src="images/veggie-delight-1.jpg"
+                    width="1600"
+                    height="1370"
+                    alt="A pizza piled with peppers, tomatoes, squash, spinach, and fresh greens"
+                    loading="lazy"
+                  />
+                </picture>
                 <a
                   class="lightbox-arrow lightbox-prev"
                   href="#photo-8"
@@ -687,13 +797,16 @@
                   href="#!"
                   aria-label="Close enlarged photos"
                 ></a>
-                <img
-                  src="images/veggie-delight-2.jpg"
-                  width="991"
-                  height="1600"
-                  alt="Close-up of a veggie pizza with tomatoes, squash, red onion, peppers, and fresh basil"
-                  loading="lazy"
-                />
+                <picture>
+                  <source type="image/webp" srcset="images/veggie-delight-2.webp" />
+                  <img
+                    src="images/veggie-delight-2.jpg"
+                    width="991"
+                    height="1600"
+                    alt="Close-up of a veggie pizza with tomatoes, squash, red onion, peppers, and fresh basil"
+                    loading="lazy"
+                  />
+                </picture>
                 <a
                   class="lightbox-arrow lightbox-prev"
                   href="#photo-9"
@@ -728,13 +841,16 @@
                   href="#!"
                   aria-label="Close enlarged photos"
                 ></a>
-                <img
-                  src="images/seasonal-special.jpg"
-                  width="1014"
-                  height="1200"
-                  alt="Close-up of a pizza with prosciutto, sausage, olives, and pepperoncini"
-                  loading="lazy"
-                />
+                <picture>
+                  <source type="image/webp" srcset="images/seasonal-special.webp" />
+                  <img
+                    src="images/seasonal-special.jpg"
+                    width="1014"
+                    height="1200"
+                    alt="Close-up of a pizza with prosciutto, sausage, olives, and pepperoncini"
+                    loading="lazy"
+                  />
+                </picture>
                 <a
                   class="lightbox-arrow lightbox-prev"
                   href="#photo-10"
@@ -877,13 +993,16 @@
                   href="#!"
                   aria-label="Close enlarged photos"
                 ></a>
-                <img
-                  src="images/cheese-1.jpg"
-                  width="1454"
-                  height="1600"
-                  alt="A cheese pizza topped with fresh basil leaves and grated parmesan"
-                  loading="lazy"
-                />
+                <picture>
+                  <source type="image/webp" srcset="images/cheese-1.webp" />
+                  <img
+                    src="images/cheese-1.jpg"
+                    width="1454"
+                    height="1600"
+                    alt="A cheese pizza topped with fresh basil leaves and grated parmesan"
+                    loading="lazy"
+                  />
+                </picture>
                 <a
                   class="lightbox-arrow lightbox-next"
                   href="#cheese-2"
@@ -907,13 +1026,16 @@
                   href="#!"
                   aria-label="Close enlarged photos"
                 ></a>
-                <img
-                  src="images/cheese-2.jpg"
-                  width="1600"
-                  height="1369"
-                  alt="A sliced cheese pizza topped with parsley, basil, and grated parmesan"
-                  loading="lazy"
-                />
+                <picture>
+                  <source type="image/webp" srcset="images/cheese-2.webp" />
+                  <img
+                    src="images/cheese-2.jpg"
+                    width="1600"
+                    height="1369"
+                    alt="A sliced cheese pizza topped with parsley, basil, and grated parmesan"
+                    loading="lazy"
+                  />
+                </picture>
                 <a
                   class="lightbox-arrow lightbox-prev"
                   href="#cheese-1"
@@ -953,13 +1075,16 @@
                   href="#!"
                   aria-label="Close enlarged photos"
                 ></a>
-                <img
-                  src="images/combo-1.jpg"
-                  width="1200"
-                  height="1600"
-                  alt="A Classic Combo pizza topped with pepperoni, sausage, mushrooms, olives, onion, peppers"
-                  loading="lazy"
-                />
+                <picture>
+                  <source type="image/webp" srcset="images/combo-1.webp" />
+                  <img
+                    src="images/combo-1.jpg"
+                    width="1200"
+                    height="1600"
+                    alt="A Classic Combo pizza topped with pepperoni, sausage, mushrooms, olives, onion, peppers"
+                    loading="lazy"
+                  />
+                </picture>
                 <figcaption id="combo-1-caption">Classic Combo</figcaption>
               </figure>
             </div>
@@ -988,13 +1113,16 @@
                   href="#!"
                   aria-label="Close enlarged photos"
                 ></a>
-                <img
-                  src="images/hawaiian.jpg"
-                  width="1436"
-                  height="1600"
-                  alt="A Hawaiian pizza topped with ham, pineapple, and fresh basil"
-                  loading="lazy"
-                />
+                <picture>
+                  <source type="image/webp" srcset="images/hawaiian.webp" />
+                  <img
+                    src="images/hawaiian.jpg"
+                    width="1436"
+                    height="1600"
+                    alt="A Hawaiian pizza topped with ham, pineapple, and fresh basil"
+                    loading="lazy"
+                  />
+                </picture>
                 <figcaption id="hawaiian-1-caption">Hawaiian</figcaption>
               </figure>
             </div>
@@ -1023,13 +1151,16 @@
                   href="#!"
                   aria-label="Close enlarged photos"
                 ></a>
-                <img
-                  src="images/pepperoni-1.jpg"
-                  width="1421"
-                  height="1600"
-                  alt="Close-up of a pepperoni pizza with fresh basil leaves and grated parmesan"
-                  loading="lazy"
-                />
+                <picture>
+                  <source type="image/webp" srcset="images/pepperoni-1.webp" />
+                  <img
+                    src="images/pepperoni-1.jpg"
+                    width="1421"
+                    height="1600"
+                    alt="Close-up of a pepperoni pizza with fresh basil leaves and grated parmesan"
+                    loading="lazy"
+                  />
+                </picture>
                 <a
                   class="lightbox-arrow lightbox-next"
                   href="#pepperoni-2"
@@ -1055,13 +1186,16 @@
                   href="#!"
                   aria-label="Close enlarged photos"
                 ></a>
-                <img
-                  src="images/pepperoni-2.jpg"
-                  width="1549"
-                  height="1600"
-                  alt="A whole pepperoni pizza with fresh basil leaves and a heavy dusting of parmesan"
-                  loading="lazy"
-                />
+                <picture>
+                  <source type="image/webp" srcset="images/pepperoni-2.webp" />
+                  <img
+                    src="images/pepperoni-2.jpg"
+                    width="1549"
+                    height="1600"
+                    alt="A whole pepperoni pizza with fresh basil leaves and a heavy dusting of parmesan"
+                    loading="lazy"
+                  />
+                </picture>
                 <a
                   class="lightbox-arrow lightbox-prev"
                   href="#pepperoni-1"
@@ -1103,13 +1237,16 @@
                   href="#!"
                   aria-label="Close enlarged photos"
                 ></a>
-                <img
-                  src="images/veggie-delight-1.jpg"
-                  width="1600"
-                  height="1370"
-                  alt="A pizza piled with peppers, tomatoes, squash, spinach, and fresh greens"
-                  loading="lazy"
-                />
+                <picture>
+                  <source type="image/webp" srcset="images/veggie-delight-1.webp" />
+                  <img
+                    src="images/veggie-delight-1.jpg"
+                    width="1600"
+                    height="1370"
+                    alt="A pizza piled with peppers, tomatoes, squash, spinach, and fresh greens"
+                    loading="lazy"
+                  />
+                </picture>
                 <a
                   class="lightbox-arrow lightbox-next"
                   href="#veggie-delight-2"
@@ -1135,13 +1272,16 @@
                   href="#!"
                   aria-label="Close enlarged photos"
                 ></a>
-                <img
-                  src="images/veggie-delight-2.jpg"
-                  width="991"
-                  height="1600"
-                  alt="Close-up of a veggie pizza with tomatoes, squash, red onion, peppers, and fresh basil"
-                  loading="lazy"
-                />
+                <picture>
+                  <source type="image/webp" srcset="images/veggie-delight-2.webp" />
+                  <img
+                    src="images/veggie-delight-2.jpg"
+                    width="991"
+                    height="1600"
+                    alt="Close-up of a veggie pizza with tomatoes, squash, red onion, peppers, and fresh basil"
+                    loading="lazy"
+                  />
+                </picture>
                 <a
                   class="lightbox-arrow lightbox-prev"
                   href="#veggie-delight-1"

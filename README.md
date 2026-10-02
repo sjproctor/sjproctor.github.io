@@ -25,11 +25,11 @@ The site is content-complete. Everything below is live in `index.html`:
 | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `index.html`                                        | All page content, meta tags, JSON-LD schema, lightbox markup, and the inline lightbox keyboard script                                                                                                                                              |
 | `styles.css`                                        | Mobile-first styles; checkered bands and placeholders are CSS gradients                                                                                                                                                                            |
-| `images/*.jpg`, `images/*.webp`                     | Web-sized photos named by pizza (1600px long side, ~0.4–0.8MB). The three hero photos also have `-400`/`-800` JPEG and WebP variants for `srcset`. `og-image.jpg` is the 1200×630 link preview. Full-resolution originals are not kept in the repo |
+| `images/*.jpg`, `images/*.webp`                     | Web-sized photos named by pizza (1600px long side, ~0.4–0.8MB JPEG), each with a WebP copy that the lightboxes serve first. The three hero photos also have `-400`/`-800` JPEG and WebP variants for `srcset`. `og-image.jpg` is the 1200×630 link preview. Full-resolution originals are not kept in the repo |
 | `images/favicon.png`, `images/apple-touch-icon.png` | Pizza emoji icons; an inline SVG version is also in the `<head>`                                                                                                                                                                                   |
 | `robots.txt`, `sitemap.xml`                         | Crawler files; contain the site URL                                                                                                                                                                                                                |
 | `.github/workflows/update-copyright-year.yml`       | Yearly footer-year update                                                                                                                                                                                                                          |
-| `vercel.json`                                       | Hosting config: long cache lifetime for `images/`                                                                                                                                                                                                  |
+| `vercel.json`                                       | Hosting config: clean URLs, `nosniff` and `Referrer-Policy` headers, long cache lifetime for `images/`                                                                                                                                             |
 
 ## Dependencies
 
@@ -47,7 +47,7 @@ The lightboxes use URL fragments (`#photo-1`, `#cheese-1`, etc.), so they work f
 
 ## Deployment
 
-The site is hosted on Vercel at `https://bernillosbeachsidepizza.com/`, deployed from this repo with no build step. `vercel.json` sets a one-year immutable cache header on everything under `images/`; HTML and CSS keep Vercel's default revalidate-every-time policy so content edits show up immediately. Because images are cached that long, replace a photo by adding a file with a new name and pointing the page at it, never by overwriting a file in place. When content changes, update `lastmod` in `sitemap.xml`.
+The site is hosted on Vercel at `https://bernillosbeachsidepizza.com/`, deployed from this repo with no build step. `vercel.json` turns on `cleanUrls` (so `/index.html` redirects to `/`), adds `X-Content-Type-Options` and `Referrer-Policy` headers to every response, and sets a one-year immutable cache header on everything under `images/`; HTML and CSS keep Vercel's default revalidate-every-time policy so content edits show up immediately. Because images are cached that long, replace a photo by adding a file with a new name and pointing the page at it, never by overwriting a file in place. When content changes, update `lastmod` in `sitemap.xml`.
 
 Any other static host would also work: upload everything except `.git`, `.github`, and `.vscode`, and make sure the host compresses HTML and CSS.
 
@@ -72,7 +72,7 @@ Prices are in the `.menu-table` in `#menu`. Crust/sauce and topping prices are t
 
 Each hero photo is a `<figure class="photo-tile">` containing a link, a `<picture>` with WebP and JPEG `srcset`, and a `figcaption` badge. The first photo takes the large landscape slot on wide screens, so it should be the widest shot. The main lightbox at the end of `#hero` holds every photo; its first three slides mirror the hero tiles, so update both when swapping a tile. Per-pizza lightboxes live after the menu table in `#menu` and repeat the relevant slides, so a caption or alt change for a pizza is made in both places.
 
-To add a photo: give it a filename that is not already in use (cached copies of an old name live for a year), resize it to 1600px on the long side (`sips -Z 1600`), and for a hero tile also make 400 and 800px JPEGs plus WebP versions (`cwebp -q 80 -resize 400 0`). Keep the `width`/`height` attributes equal to the file's real pixel size.
+To add a photo: give it a filename that is not already in use (cached copies of an old name live for a year), resize it to 1600px on the long side (`sips -Z 1600`), make a WebP copy (`cwebp -q 80 name.jpg -o name.webp`) for its lightbox `<picture>`, and for a hero tile also make 400 and 800px JPEGs plus WebP versions (`cwebp -q 80 -resize 400 0`). Keep the `width`/`height` attributes equal to the file's real pixel size.
 
 ### SEO tags
 
@@ -80,7 +80,7 @@ All SEO tags live in the `<head>`:
 
 - **Title and meta description** — keep "Fort Bragg" and "Pizza" in the title; keep the description under about 160 characters.
 - **Open Graph** — `og:title` is the short name shown in text message and social previews; `og:description` should match the meta description. `og:image` points at `images/og-image.jpg`, a 1200×630 crop of the hero photo, via an absolute URL.
-- **JSON-LD** — the `Restaurant` object holds name, address, phone, and hours. Update it whenever those change. It also carries `priceRange`, `geo`, and `sameAs`. Good next additions: `hasMap` and a `hasMenu` block. Validate with [Google's Rich Results Test](https://search.google.com/test/rich-results).
+- **JSON-LD** — the `Restaurant` object holds name, address, phone, and hours. Update it whenever those change. It also carries `alternateName` (the Google listing's shorter name), `priceRange`, `geo`, `hasMap`, `sameAs`, payment details, and a `hasMenu` block that repeats the menu table's prices, so update `hasMenu` whenever a price changes. Validate with [Google's Rich Results Test](https://search.google.com/test/rich-results).
 
 Off-page, the biggest lever is a claimed Google Business Profile whose name, address, and phone match the site exactly.
 

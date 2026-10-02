@@ -617,6 +617,11 @@ address {
   inset: 0;
 }
 
+/* Let the <img> size against the slide, not its <picture> wrapper */
+.lightbox-slide picture {
+  display: contents;
+}
+
 .lightbox-slide img {
   position: relative;
   display: block;
